@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages - Static Labs</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .title {
+      margin-right: 20px !important;
+    }
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #000000 !important;
+    }
+
+    [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong,
+    [data-theme="dark"] .title {
+      color: #ffffff !important;
+    }
+
+    /* Dark mode: table overrides */
+    [data-theme="dark"] table {
+      border-color: #2d2d2d !important;
+    }
+    [data-theme="dark"] tbody {
+      background-color: #111111 !important;
+      color: #d1d5db !important;
+    }
+    [data-theme="dark"] tbody td,
+    [data-theme="dark"] tbody tr {
+      background-color: #111111 !important;
+      border-color: #2d2d2d !important;
+    }
+    [data-theme="dark"] tr.bg-gray-50 td,
+    [data-theme="dark"] tr.bg-gray-50 {
+      background-color: #1a1a1a !important;
+    }
+
+    /* Dark mode: booking calendar box */
+    [data-theme="dark"] .calendar-box {
+      background-color: #111111 !important;
+      border-color: #2d2d2d !important;
+    }
+    [data-theme="dark"] .calendar-box input,
+    [data-theme="dark"] .calendar-box button {
+      background-color: #1a1a1a !important;
+      border-color: #2d2d2d !important;
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+
+  <!-- Background Image -->
+  <img src="images/bg6.jpg"
+       alt="Float Therapy Packages"
+       class="absolute inset-0 w-full h-full object-cover z-0 scale-105">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/85"></div>
+
+  <!-- Glow Elements -->
+  <div class="absolute top-20 left-10 w-44 h-44 bg-[#38BDF8]/20 blur-3xl rounded-full"></div>
+  <div class="absolute bottom-20 right-10 w-56 h-56 bg-[#38BDF8]/10 blur-3xl rounded-full"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+      Choose Your Perfect <span class="text-[#38BDF8]">Float Package</span>
+    </h1>
+
+    <p class="mt-6 text-gray-300 text-lg md:text-xl">
+      Flexible wellness plans designed for relaxation, recovery, and long-term mental well-being.
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+
+      <a href="packages.html"
+         class="bg-[#38BDF8] text-black px-8 py-4 rounded-xl font-semibold hover:bg-sky-400 transition">
+        Explore Packages
+      </a>
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION1 -->
+ <section class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-5xl font-bold text-black">
+      Compare Our <span class="text-[#38BDF8]">Float Packages</span>
+    </h2>
+
+    <p class="mt-5 text-gray-600 text-lg max-w-2xl mx-auto">
+      Choose the perfect package based on your relaxation needs and experience level.
+    </p>
+
+    <!-- Table -->
+    <div class="mt-16 overflow-x-auto">
+
+      <table class="w-full min-w-[700px] border border-gray-200 rounded-2xl overflow-hidden">
+
+        <!-- Header -->
+        <thead class="bg-[#0B0F19] text-white">
+          <tr>
+            <th class="py-4 px-6 text-left">Features</th>
+            <th class="py-4 px-6">Starter</th>
+            <th class="py-4 px-6 bg-[#38BDF8] text-black">Deep Relax (Popular)</th>
+            <th class="py-4 px-6">Premium Membership</th>
+          </tr>
+        </thead>
+
+        <!-- Body -->
+        <tbody class="text-gray-700 text-sm">
+
+          <tr class="border-b">
+            <td class="py-4 px-6 font-medium">Session Duration</td>
+            <td class="py-4 px-6 text-center">60 min</td>
+            <td class="py-4 px-6 text-center">90 min</td>
+            <td class="py-4 px-6 text-center">Multiple sessions</td>
+          </tr>
+
+          <tr class="border-b bg-gray-50">
+            <td class="py-4 px-6 font-medium">Private Room</td>
+            <td class="py-4 px-6 text-center">✔</td>
+            <td class="py-4 px-6 text-center">✔</td>
+            <td class="py-4 px-6 text-center">✔ Premium Suite</td>
+          </tr>
+
+          <tr class="border-b">
+            <td class="py-4 px-6 font-medium">Aromatherapy</td>
+            <td class="py-4 px-6 text-center">✖</td>
+            <td class="py-4 px-6 text-center">✔</td>
+            <td class="py-4 px-6 text-center">✔ Included</td>
+          </tr>
+
+          <tr class="border-b bg-gray-50">
+            <td class="py-4 px-6 font-medium">Guided Audio</td>
+            <td class="py-4 px-6 text-center">Basic</td>
+            <td class="py-4 px-6 text-center">Advanced</td>
+            <td class="py-4 px-6 text-center">Personalized</td>
+          </tr>
+
+          <tr class="border-b">
+            <td class="py-4 px-6 font-medium">Price</td>
+            <td class="py-4 px-6 text-center">₹1,499</td>
+            <td class="py-4 px-6 text-center text-[#38BDF8] font-semibold">₹2,499</td>
+            <td class="py-4 px-6 text-center">₹5,999/month</td>
+          </tr>
+
+          <tr>
+            <td class="py-6 px-6"></td>
+            <td class="py-6 px-6 text-center">
+              <button class="bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-800">
+                Book
+              </button>
+            </td>
+
+            <td class="py-6 px-6 text-center">
+              <button class="bg-[#38BDF8] text-black px-5 py-2 rounded-lg hover:bg-sky-400 font-semibold">
+                Book Now
+              </button>
+            </td>
+
+            <td class="py-6 px-6 text-center">
+              <button class="bg-black text-white px-5 py-2 rounded-lg hover:bg-gray-800">
+                Join
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION2 -->
+ <section class="py-24 bg-[#0B0F19] text-white">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT IMAGE -->
+    <div class="relative">
+
+      <img src="images/img2.avif"
+           alt="Float Therapy Room"
+           class="rounded-3xl shadow-2xl w-full object-cover">
+
+      <!-- Badge -->
+      <div class="absolute top-6 left-6 bg-[#38BDF8] text-black px-4 py-2 rounded-full text-sm font-semibold">
+        ⭐ Most Popular Choice
+      </div>
+
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div>
+
+      <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+        Deep Relax <span class="text-[#38BDF8]">Float Package</span>
+      </h2>
+
+      <p class="mt-6 text-gray-300 text-lg">
+        Our most recommended session for complete mind and body reset. Perfect for stress relief, sleep improvement, and deep relaxation.
+      </p>
+
+      <!-- Features -->
+      <ul class="mt-8 space-y-4 text-gray-300 text-sm">
+
+        <li class="flex gap-3">
+          <span class="text-[#38BDF8]">✔</span>
+          90 minutes full sensory deprivation session
+        </li>
+
+        <li class="flex gap-3">
+          <span class="text-[#38BDF8]">✔</span>
+          Magnesium-rich Epsom salt therapy for muscle recovery
+        </li>
+
+        <li class="flex gap-3">
+          <span class="text-[#38BDF8]">✔</span>
+          Private luxury float room with temperature control
+        </li>
+
+        <li class="flex gap-3">
+          <span class="text-[#38BDF8]">✔</span>
+          Guided relaxation audio available (optional)
+        </li>
+
+        <li class="flex gap-3">
+          <span class="text-[#38BDF8]">✔</span>
+          Instant mental reset & stress relief effect
+        </li>
+
+      </ul>
+
+      <!-- Price -->
+      <div class="mt-8 flex items-center gap-4">
+        <p class="text-3xl font-bold text-[#38BDF8]">₹2,499</p>
+        <p class="text-gray-400 text-sm">per session</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-10 flex flex-col sm:flex-row gap-4">
+
+        <a href="contact.html"
+           class="bg-[#38BDF8] text-black px-8 py-4 rounded-xl font-semibold hover:bg-sky-400 transition text-center">
+          Book This Package
+        </a>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION3 -->
+ <section class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-5xl font-bold text-black">
+      Book Your <span class="text-[#38BDF8]">Float Session</span>
+    </h2>
+
+    <p class="mt-5 text-gray-600 text-lg max-w-2xl mx-auto">
+      Select your preferred date and time for a peaceful float therapy experience.
+    </p>
+
+    <!-- Booking Box -->
+    <div class="mt-16 grid lg:grid-cols-2 gap-10 text-left">
+
+      <!-- CALENDAR -->
+      <div class="calendar-box p-8 rounded-3xl border shadow-sm">
+
+        <h3 class="text-xl font-semibold text-black">Select Date</h3>
+
+        <input type="date"
+               class="mt-6 w-full border rounded-xl p-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]" />
+
+        <h3 class="mt-8 text-xl font-semibold text-black">Available Time Slots</h3>
+
+        <div class="mt-4 grid grid-cols-2 gap-3">
+
+          <button class="border rounded-xl py-3 hover:bg-[#38BDF8] hover:text-black transition">
+            08:00 AM
+          </button>
+
+          <button class="border rounded-xl py-3 hover:bg-[#38BDF8] hover:text-black transition">
+            10:00 AM
+          </button>
+
+          <button class="border rounded-xl py-3 hover:bg-[#38BDF8] hover:text-black transition">
+            12:00 PM
+          </button>
+
+          <button class="border rounded-xl py-3 hover:bg-[#38BDF8] hover:text-black transition">
+            02:00 PM
+          </button>
+
+          <button class="border rounded-xl py-3 hover:bg-[#38BDF8] hover:text-black transition">
+            04:00 PM
+          </button>
+
+          <button class="border rounded-xl py-3 hover:bg-[#38BDF8] hover:text-black transition">
+            06:00 PM
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- BOOKING SUMMARY -->
+      <div class="p-8 rounded-3xl bg-[#0B0F19] text-white">
+
+        <h3 class="text-xl font-semibold">Your Booking Summary</h3>
+
+        <div class="mt-6 space-y-4 text-gray-300 text-sm">
+
+          <div class="flex justify-between">
+            <span>Package</span>
+            <span class="text-white">Deep Relax Float</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Duration</span>
+            <span class="text-white">90 Minutes</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Selected Date</span>
+            <span class="text-white">Not selected</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span>Time Slot</span>
+            <span class="text-white">Not selected</span>
+          </div>
+
+        </div>
+
+        <!-- Price -->
+        <div class="mt-8 border-t border-white/10 pt-6 flex justify-between">
+          <span class="text-gray-300">Total</span>
+          <span class="text-[#38BDF8] text-2xl font-bold">₹2,499</span>
+        </div>
+
+        <!-- CTA -->
+        <button class="mt-8 w-full bg-[#38BDF8] text-black py-4 rounded-xl font-semibold hover:bg-sky-400 transition">
+          Confirm Booking
+        </button>
+
+        <p class="mt-4 text-xs text-gray-400 text-center">
+          You will receive instant confirmation after booking
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+   <!-- FOOTER -->
+  <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+    lucide.createIcons();
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

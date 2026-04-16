@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Static Labs</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .title {
+      margin-right: 20px !important;
+    }
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #000000 !important;
+    }
+
+    [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong,
+    [data-theme="dark"] .title {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+   <section class="relative h-[75vh] md:h-[85vh] flex items-center justify-center text-center overflow-hidden">
+
+  <!-- Background Image -->
+  <img src="images/bg3.avif"
+       class="absolute inset-0 w-full h-full object-cover">
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/60"></div>
+
+  <!-- Blue Glow -->
+  <div class="absolute top-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#38BDF8]/20 blur-[120px] rounded-full"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-3xl px-6">
+
+    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+      Discover the <span class="text-[#38BDF8]">Art of Relaxation</span>
+    </h1>
+
+    <p class="mt-6 text-gray-300 text-lg">
+      Learn about our journey, our passion for wellness, and how we help you achieve deep relaxation through float therapy.
+    </p>
+  </div>
+
+</section>
+<!-- SECTION1 -->
+<section class="py-24 bg-white overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT IMAGE SIDE -->
+    <div class="relative">
+
+      <!-- Main Image -->
+      <img src="images/img4.webp"
+           class="w-full h-[400px] md:h-[500px] object-cover rounded-3xl shadow-xl">
+
+      <!-- Overlay Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl"></div>
+
+      <!-- Floating Quote Card -->
+      <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-lg p-6 rounded-2xl shadow-xl max-w-xs">
+
+        <h3 class="btn text-lg font-semibold text-black">
+          “Relax. Reset. Reconnect.”
+        </h3>
+
+        <p class="btn text-gray-600 text-sm mt-2">
+          Experience calm like never before.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div>
+
+      <h2 class="text-4xl md:text-5xl font-bold text-black leading-tight">
+        Our <span class="text-[#38BDF8]">Philosophy</span>
+      </h2>
+
+      <p class="mt-6 text-gray-600 leading-relaxed text-lg">
+        We believe true relaxation begins when you disconnect from the noise of everyday life and reconnect with your inner self.
+      </p>
+
+      <p class="mt-4 text-gray-600 leading-relaxed">
+        Our float therapy environment is carefully designed to eliminate distractions, allowing your mind and body to enter a deeply restorative state.
+      </p>
+
+      <!-- Highlight Points -->
+      <div class="mt-8 space-y-4">
+
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+            ✔
+          </div>
+          <p class="text-gray-600">Calm, distraction-free environment</p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+            ✔
+          </div>
+          <p class="text-gray-600">Designed for deep mental clarity</p>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+            ✔
+          </div>
+          <p class="text-gray-600">Holistic wellness experience</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION2 -->
+ <section class="py-20 bg-[#f8fcff]">
+
+  <div class="max-w-5xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-black">
+        Our <span class="text-[#38BDF8]">Journey</span>
+      </h2>
+      <p class="mt-4 text-gray-600">
+        A simple timeline of how we grew.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative mt-16">
+
+      <!-- Line -->
+      <div class="absolute left-4 md:left-1/2 top-0 h-full w-[2px] bg-[#38BDF8]/30"></div>
+
+      <!-- ITEM -->
+      <div class="relative flex items-start md:items-center mb-12">
+
+        <!-- Dot -->
+        <div class="w-8 h-8 bg-[#38BDF8] rounded-full absolute left-0 md:left-1/2 md:-translate-x-1/2"></div>
+
+        <!-- Content -->
+        <div class="ml-14 md:ml-0 md:w-1/2 md:pr-10 md:text-right">
+
+          <h3 class="font-semibold text-lg text-black">2022 - The Idea</h3>
+          <p class="text-gray-600 mt-2">
+            We started with a vision to create a peaceful wellness space.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="relative flex items-start md:items-center mb-12">
+
+        <div class="w-8 h-8 bg-[#38BDF8] rounded-full absolute left-0 md:left-1/2 md:-translate-x-1/2"></div>
+
+        <div class="ml-14 md:ml-auto md:w-1/2 md:pl-10">
+
+          <h3 class="font-semibold text-lg text-black">2023 - First Center</h3>
+          <p class="text-gray-600 mt-2">
+            Opened our first float therapy center.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="relative flex items-start md:items-center mb-12">
+
+        <div class="w-8 h-8 bg-[#38BDF8] rounded-full absolute left-0 md:left-1/2 md:-translate-x-1/2"></div>
+
+        <div class="ml-14 md:ml-0 md:w-1/2 md:pr-10 md:text-right">
+
+          <h3 class="font-semibold text-lg text-black">2024 - Growth</h3>
+          <p class="text-gray-600 mt-2">
+            Expanded services and improved experience.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- ITEM -->
+      <div class="relative flex items-start md:items-center">
+
+        <div class="w-8 h-8 bg-[#38BDF8] rounded-full absolute left-0 md:left-1/2 md:-translate-x-1/2"></div>
+
+        <div class="ml-14 md:ml-auto md:w-1/2 md:pl-10">
+
+          <h3 class="font-semibold text-lg text-black">2025 - Today</h3>
+          <p class="text-gray-600 mt-2">
+            Serving happy clients with premium float experiences.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION3 -->
+  <section class="py-24 bg-[#f8fcff]">
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-5xl font-bold text-black">
+      Our Core <span class="text-[#38BDF8]">Values</span>
+    </h2>
+
+    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+      The principles that guide everything we do at our float center.
+    </p>
+
+    <!-- Grid -->
+    <div class="mt-16 grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+
+      <!-- Value -->
+      <div class="card bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+
+        <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+          <i data-lucide="heart"></i>
+        </div>
+
+        <h3 class="mt-4 font-semibold text-black">Care</h3>
+
+        <p class="text-gray-600 text-sm mt-2">
+          We prioritize your comfort and well-being.
+        </p>
+
+      </div>
+
+      <!-- Value -->
+      <div class="card bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+
+        <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+          <i data-lucide="shield"></i>
+        </div>
+
+        <h3 class="mt-4 font-semibold text-black">Safety</h3>
+
+        <p class="text-gray-600 text-sm mt-2">
+          Hygiene and safety are always our priority.
+        </p>
+
+      </div>
+
+      <!-- Value -->
+      <div class="card bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+
+        <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+          <i data-lucide="sparkles"></i>
+        </div>
+
+        <h3 class="mt-4 font-semibold text-black">Quality</h3>
+
+        <p class="text-gray-600 text-sm mt-2">
+          Premium float pods and top-level experience.
+        </p>
+
+      </div>
+
+      <!-- Value -->
+      <div class="card bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+
+        <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+          <i data-lucide="users"></i>
+        </div>
+
+        <h3 class="mt-4 font-semibold text-black">Community</h3>
+
+        <p class="text-gray-600 text-sm mt-2">
+          Building a calm and supportive wellness.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION4 -->
+ <section class="py-24 bg-white">
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-5xl font-bold text-black">
+      Meet Our <span class="text-[#38BDF8]">Experts</span>
+    </h2>
+
+    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+      Our team is dedicated to helping you achieve deep relaxation and wellness.
+    </p>
+
+    <!-- Grid -->
+    <div class="mt-16 grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+
+      <!-- Member -->
+      <div class="group">
+        <div class="relative w-40 h-40 mx-auto">
+
+          <img src="images/team3.avif"
+               class="w-full h-full object-cover rounded-full shadow-lg group-hover:scale-105 transition">
+
+          <!-- Glow -->
+          <div class="absolute inset-0 rounded-full bg-[#38BDF8]/20 blur-2xl opacity-0 group-hover:opacity-100 transition"></div>
+
+        </div>
+
+        <h3 class="mt-6 text-lg font-semibold text-black">Rahul Sharma</h3>
+        <p class="text-[#38BDF8] text-sm">Wellness Expert</p>
+      </div>
+
+      <!-- Member -->
+      <div class="group">
+        <div class="relative w-40 h-40 mx-auto">
+
+          <img src="images/team2.avif"
+               class="w-full h-full object-cover rounded-full shadow-lg group-hover:scale-105 transition">
+
+          <div class="absolute inset-0 rounded-full bg-[#38BDF8]/20 blur-2xl opacity-0 group-hover:opacity-100 transition"></div>
+
+        </div>
+
+        <h3 class="mt-6 text-lg font-semibold text-black">Priya Nair</h3>
+        <p class="text-[#38BDF8] text-sm">Therapy Specialist</p>
+      </div>
+
+      <!-- Member -->
+      <div class="group">
+        <div class="relative w-40 h-40 mx-auto">
+
+          <img src="images/team4.avif"
+               class="w-full h-full object-cover rounded-full shadow-lg group-hover:scale-105 transition">
+
+          <div class="absolute inset-0 rounded-full bg-[#38BDF8]/20 blur-2xl opacity-0 group-hover:opacity-100 transition"></div>
+
+        </div>
+
+        <h3 class="mt-6 text-lg font-semibold text-black">Arjun Patel</h3>
+        <p class="text-[#38BDF8] text-sm">Support Coach</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SECTION5 -->
+ <section class="py-24 bg-white">
+
+  <div class="max-w-6xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-5xl font-bold text-black">
+      Trusted & <span class="text-[#38BDF8]">Certified</span>
+    </h2>
+
+    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+      We follow strict standards to ensure safety, hygiene, and a premium experience.
+    </p>
+
+    <!-- Icons Row -->
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-10 items-center">
+
+      <!-- Item -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+          <i data-lucide="shield-check"></i>
+        </div>
+        <p class="mt-3 text-sm text-gray-600">Certified Hygiene</p>
+      </div>
+
+      <!-- Item -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+          <i data-lucide="award"></i>
+        </div>
+        <p class="mt-3 text-sm text-gray-600">Quality Approved</p>
+      </div>
+
+      <!-- Item -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+          <i data-lucide="thumbs-up"></i>
+        </div>
+        <p class="mt-3 text-sm text-gray-600">Trusted by Clients</p>
+      </div>
+
+      <!-- Item -->
+      <div class="flex flex-col items-center">
+        <div class="w-14 h-14 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">
+          <i data-lucide="badge-check"></i>
+        </div>
+        <p class="mt-3 text-sm text-gray-600">Verified Standards</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- FOOTER -->
+  <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+    lucide.createIcons();
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

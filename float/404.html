@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found - Static Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#38BDF8',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'float-delayed': 'float 6s ease-in-out 3s infinite',
+            'blob': 'blob 7s infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    /* For the animated background blobs */
+    .animation-delay-2000 { animation-delay: 2s; }
+    .animation-delay-4000 { animation-delay: 4s; }
+  </style>
+  <script>
+    // Keeps the page synced with the user's theme preference from login/dashboard
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-slate-50 dark:bg-[#0a0f1a] transition-colors duration-300 font-sans flex items-center justify-center min-h-screen p-4 relative overflow-hidden">
+
+  <div class="absolute inset-0 z-0 overflow-hidden flex items-center justify-center pointer-events-none">
+    <div class="absolute w-96 h-96 bg-brand/20 dark:bg-brand/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob top-1/4 left-1/4"></div>
+    <div class="absolute w-96 h-96 bg-sky-300/20 dark:bg-sky-600/10 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000 top-1/3 right-1/4"></div>
+    <div class="absolute w-80 h-80 bg-slate-300/30 dark:bg-slate-800/50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000 bottom-1/4 left-1/3"></div>
+  </div>
+
+  <div class="w-full max-w-lg bg-white/80 dark:bg-[#111827]/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-slate-200 dark:border-white/5 p-10 relative z-10 text-center flex flex-col items-center">
+    
+    <div class="relative w-full flex justify-center items-center h-40 mb-6">
+      <h1 class="absolute text-[150px] font-black text-slate-100 dark:text-slate-800/50 select-none animate-pulse-slow">404</h1>
+      <div class="absolute flex items-center gap-2">
+        <span class="text-7xl font-black text-slate-800 dark:text-white animate-float shadow-brand">4</span>
+        <div class="w-16 h-16 rounded-full border-8 border-brand border-dashed animate-[spin_6s_linear_infinite] flex items-center justify-center">
+          <div class="w-6 h-6 bg-brand rounded-full animate-pulse"></div>
+        </div>
+        <span class="text-7xl font-black text-slate-800 dark:text-white animate-float-delayed">4</span>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Signal Lost</h2>
+    <p class="text-sm text-slate-500 dark:text-slate-400 font-medium mb-8 leading-relaxed max-w-xs mx-auto">
+      The page you're looking for has drifted off the grid or doesn't exist. Let's get you back to familiar coordinates.
+    </p>
+
+    <div class="w-full flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="index.html" class="flex-1 py-3.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl font-bold text-sm shadow-sm hover:bg-slate-200 dark:hover:bg-slate-700 hover:-translate-y-0.5 transition duration-200 flex items-center justify-center gap-2">
+        <i class="bi bi-arrow-left rtl:rotate-180"></i> Go Back
+      </a>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Static Labs</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .title {
+      margin-right: 20px !important;
+    }
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #000000 !important;
+    }
+
+    [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong,
+    [data-theme="dark"] .title {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+<section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+
+  <!-- Background Image -->
+  <img src="images/bg2.avif"
+       alt="Contact Float Therapy Center"
+       class="absolute inset-0 w-full h-full object-cover z-0 scale-105">
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/85"></div>
+
+  <!-- Soft Glow -->
+  <div class="absolute top-20 left-10 w-52 h-52 bg-[#38BDF8]/20 blur-3xl rounded-full"></div>
+  <div class="absolute bottom-20 right-10 w-60 h-60 bg-[#38BDF8]/10 blur-3xl rounded-full"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight mt-16">
+      Get in <span class="text-[#38BDF8]">Touch</span>
+    </h1>
+
+    <p class="mt-6 text-gray-300 text-lg md:text-xl">
+      We’re here to help you start your float therapy journey. Reach out anytime.
+    </p>
+
+    <!-- Quick Info -->
+    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+
+      <div>
+        <p class="text-2xl font-bold text-[#38BDF8]">24/7</p>
+        <p class="text-sm text-gray-400">Support</p>
+      </div>
+
+      <div>
+        <p class="text-2xl font-bold text-[#38BDF8]">Fast</p>
+        <p class="text-sm text-gray-400">Response Time</p>
+      </div>
+
+      <div>
+        <p class="text-2xl font-bold text-[#38BDF8]">Friendly</p>
+        <p class="text-sm text-gray-400">Team Support</p>
+      </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+
+      <a href="#form"
+         class="bg-[#38BDF8] text-black px-8 py-4 rounded-xl font-semibold hover:bg-sky-400 transition">
+        Send a Message
+      </a>
+
+      <a href="#map"
+         class="btn1 border border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-black transition">
+        View Location
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION1 -->
+ <section id="form" class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT CONTENT -->
+    <div>
+
+      <h2 class="text-3xl md:text-5xl font-bold text-black leading-tight">
+        Send Us a <span class="text-[#38BDF8]">Message</span>
+      </h2>
+
+      <p class="mt-6 text-gray-600 text-lg">
+        Have questions or want to book your first float session? We’ll get back to you quickly.
+      </p>
+
+      <!-- Info -->
+      <div class="mt-10 space-y-6 text-gray-600 text-sm">
+
+        <div>
+          <h4 class="font-semibold text-black">Quick Response</h4>
+          <p>We usually reply within a few hours.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-black">Friendly Support</h4>
+          <p>Our team will guide you through your first float experience.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-black">Booking Help</h4>
+          <p>We assist you in choosing the right package.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FORM -->
+    <div class="p-8 rounded-3xl border shadow-xl">
+
+      <form class="space-y-5">
+
+        <div>
+          <label class="text-sm font-medium text-gray-700">Full Name</label>
+          <input type="text" placeholder="Enter your name"
+                 class="mt-2 w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]">
+        </div>
+
+        <div>
+          <label class="text-sm font-medium text-gray-700">Email</label>
+          <input type="email" placeholder="Enter your email"
+                 class="mt-2 w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]">
+        </div>
+
+        <div>
+          <label class="text-sm font-medium text-gray-700">Phone</label>
+          <input type="tel" placeholder="Enter your phone number"
+                 class="mt-2 w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]">
+        </div>
+
+        <div>
+          <label class="text-sm font-medium text-gray-700">Message</label>
+          <textarea rows="4" placeholder="Write your message..."
+                    class="mt-2 w-full border rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]"></textarea>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit"
+                class="w-full bg-[#38BDF8] text-black py-4 rounded-xl font-semibold hover:bg-sky-400 transition">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION2 -->
+ <section id="map" class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center">
+      <h2 class="text-3xl md:text-5xl font-bold text-black">
+        Our <span class="text-[#38BDF8]">Location</span>
+      </h2>
+
+      <p class="mt-5 text-gray-600 text-lg max-w-2xl mx-auto">
+        Visit our float therapy center for a peaceful experience.
+      </p>
+    </div>
+
+    <!-- Map -->
+    <div class="mt-16 rounded-3xl overflow-hidden shadow-xl border">
+
+      <iframe
+        src="https://www.google.com/maps?q=12.9716,77.5946&z=14&output=embed"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION3 -->
+ <section class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-5xl font-bold text-black">
+      Get in <span class="text-[#38BDF8]">Touch</span>
+    </h2>
+
+    <p class="mt-5 text-gray-600 text-lg max-w-2xl mx-auto">
+      We’re here to help you with bookings, questions, and support.
+    </p>
+
+    <!-- Cards -->
+    <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Phone -->
+      <div class="p-6 rounded-3xl border shadow-sm hover:shadow-xl transition text-left">
+        <div class="text-[#38BDF8] text-2xl"><i class="bi bi-telephone-inbound"></i></div>
+        <h3 class="mt-3 font-semibold text-black">Call Us</h3>
+        <p class="mt-2 text-gray-600 text-sm">Speak with our support team.</p>
+        <p class="mt-4 font-semibold text-black">+91 98765 43210</p>
+      </div>
+
+      <!-- Email -->
+      <div class="p-6 rounded-3xl border shadow-sm hover:shadow-xl transition text-left">
+        <div class="text-[#38BDF8] text-2xl"><i class="bi bi-envelope"></i></div>
+        <h3 class="mt-3 font-semibold text-black">Email</h3>
+        <p class="mt-2 text-gray-600 text-sm">Send your queries anytime.</p>
+        <p class="mt-4 font-semibold text-black">staticlabs@gmail.com</p>
+      </div>
+
+      <!-- WhatsApp -->
+      <div class="p-6 rounded-3xl border shadow-sm hover:shadow-xl transition text-left">
+        <div class="text-[#38BDF8] text-2xl"><i class="bi bi-whatsapp"></i></div>
+        <h3 class="mt-3 font-semibold text-black">WhatsApp</h3>
+        <p class="mt-2 text-gray-600 text-sm">Quick chat support available.</p>
+        <p class="mt-4 font-semibold text-black">Chat Now</p>
+      </div>
+
+      <!-- Location -->
+      <div class="p-6 rounded-3xl border shadow-sm hover:shadow-xl transition text-left">
+        <div class="text-[#38BDF8] text-2xl"><i class="bi bi-geo-alt"></i></div>
+        <h3 class="mt-3 font-semibold text-black">Visit Us</h3>
+        <p class="mt-2 text-gray-600 text-sm">Come experience float therapy.</p>
+        <p class="mt-4 font-semibold text-black">Open 9AM – 9PM</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+      <!-- FOOTER -->
+  <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+    lucide.createIcons();
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Static Labs</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .title {
+      margin-right: 20px !important;
+    }
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #000000 !important;
+    }
+
+    [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong,
+    [data-theme="dark"] .title {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+
+  <!-- Background Image -->
+  <img src="images/bg4.jpg" alt="Float Therapy Background"
+       class="absolute inset-0 w-full h-full object-cover z-0">
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+  <!-- Blue Glow -->
+  <div class="absolute top-0 right-0 w-[700px] h-[700px] bg-[#38BDF8]/20 rounded-full blur-3xl -mr-80 -mt-40 pointer-events-none z-0"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 relative z-10">
+
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+      <!-- LEFT CONTENT -->
+      <div class="max-w-2xl">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#38BDF8]/10 border border-[#38BDF8]/30 mb-6 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-[#38BDF8] animate-pulse"></span>
+          <span class="text-[10px] font-bold uppercase tracking-widest text-[#38BDF8]">
+            Now Booking Sessions
+          </span>
+        </div>
+
+        <!-- Heading -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight text-white mb-6">
+          Discover the Power of <span class="text-[#38BDF8]">Float Therapy</span>
+        </h1>
+
+        <!-- Description -->
+        <p class="text-lg text-gray-300 mb-10 leading-relaxed">
+          Step into a calm, sensory-free environment designed to help your mind and body fully relax.
+          Experience weightlessness, mental clarity, and deep recovery like never before.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row items-center gap-4">
+
+          <!-- Primary -->
+          <a href="booking.html"
+             class="w-full sm:w-auto px-8 py-4 bg-[#38BDF8] text-black rounded-md font-bold text-[13px] uppercase tracking-widest hover:bg-sky-400 shadow-lg shadow-[#38BDF8]/30 transition-all text-center flex items-center justify-center gap-2 group">
+            Book a Session
+            <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+          </a>
+
+          <!-- Secondary -->
+          <a href="services.html"
+             class="btn1 w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-md font-bold text-[13px] uppercase tracking-widest hover:bg-white hover:text-black transition-all text-center backdrop-blur-sm">
+            Explore Services
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT IMAGE -->
+      <div class="relative hidden md:block">
+
+        <!-- Circle Image -->
+        <div class="relative w-full aspect-square max-w-md mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white">
+
+          <img src="images/img7.jpg" alt="Float Therapy Pod"
+               class="w-full h-full object-cover">
+
+          <div class="absolute inset-0 bg-[#38BDF8]/10 mix-blend-multiply"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION1 -->
+ <section class="py-24 bg-[#f8fcff]">
+
+  <div class="max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-5xl font-bold text-black">
+      Our <span class="text-[#38BDF8]">Services</span>
+    </h2>
+
+    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+      Choose your perfect relaxation experience and book your session instantly.
+    </p>
+
+    <!-- Grid -->
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- CARD -->
+      <div class="card border border-white/10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition overflow-hidden group">
+
+        <img src="images/img1.avif"
+             class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="p-6 text-left">
+
+          <h3 class="text-xl font-semibold text-black">Float Therapy</h3>
+
+          <p class="text-gray-600 text-sm mt-2">
+            Experience complete sensory isolation and deep relaxation.
+          </p>
+
+          <!-- Features -->
+          <ul class="mt-4 space-y-2 text-sm text-gray-600">
+            <li>✔ 60 / 90 min sessions</li>
+            <li>✔ Epsom salt float pod</li>
+            <li>✔ Stress & anxiety relief</li>
+          </ul>
+
+          <!-- Price -->
+          <div class="mt-4 font-bold text-[#38BDF8]">
+            ₹1999 / session
+          </div>
+
+          <!-- Button -->
+          <a href="sign.html"
+             class="mt-6 block text-center bg-[#38BDF8] text-black py-3 rounded-xl font-semibold hover:bg-sky-400 transition">
+            Book Now
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card border border-white/10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition overflow-hidden group">
+
+        <img src="images/img5.avif"
+             class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="p-6 text-left">
+
+          <h3 class="text-xl font-semibold text-black">Guided Meditation</h3>
+
+          <p class="text-gray-600 text-sm mt-2">
+            Calm your mind with guided breathing and relaxation sessions.
+          </p>
+
+          <ul class="mt-4 space-y-2 text-sm text-gray-600">
+            <li>✔ Beginner friendly</li>
+            <li>✔ Audio-guided sessions</li>
+            <li>✔ Improves focus</li>
+          </ul>
+
+          <div class="mt-4 font-bold text-[#38BDF8]">
+            ₹999 / session
+          </div>
+
+          <a href="sign.html"
+             class="mt-6 block text-center bg-[#38BDF8] text-black py-3 rounded-xl font-semibold hover:bg-sky-400 transition">
+            Book Now
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card border border-white/10 bg-white rounded-3xl shadow-lg hover:shadow-2xl transition overflow-hidden group">
+
+        <img src="images/img6.webp"
+             class="w-full h-56 object-cover group-hover:scale-105 transition duration-500">
+
+        <div class="p-6 text-left">
+
+          <h3 class="text-xl font-semibold text-black">Wellness Therapy</h3>
+
+          <p class="text-gray-600 text-sm mt-2">
+            Holistic treatments for physical and mental recovery.
+          </p>
+
+          <ul class="mt-4 space-y-2 text-sm text-gray-600">
+            <li>✔ Body relaxation</li>
+            <li>✔ Muscle recovery</li>
+            <li>✔ Stress relief</li>
+          </ul>
+
+          <div class="mt-4 font-bold text-[#38BDF8]">
+            ₹1499 / session
+          </div>
+
+          <a href="sign.html"
+             class="mt-6 block text-center bg-[#38BDF8] text-black py-3 rounded-xl font-semibold hover:bg-sky-400 transition">
+            Book Now
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION2 -->
+ <section class="py-24 bg-[#0B0F19] text-white">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT CONTENT -->
+    <div>
+
+      <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+        What to Expect in Your <span class="text-[#38BDF8]">Float Session</span>
+      </h2>
+
+      <p class="mt-6 text-gray-300 text-lg">
+        Your first float experience is simple, safe, and deeply relaxing. Here’s how your journey unfolds.
+      </p>
+
+      <!-- Steps -->
+      <div class="mt-10 space-y-6">
+
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-[#38BDF8] text-black flex items-center justify-center font-bold">
+            1
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Arrival & Welcome</h4>
+            <p class="text-gray-400 text-sm mt-1">
+              You’ll be guided through a calm introduction and preparation process.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-[#38BDF8] text-black flex items-center justify-center font-bold">
+            2
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Shower & Preparation</h4>
+            <p class="text-gray-400 text-sm mt-1">
+              Cleanse your body before entering the float tank for the best experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-[#38BDF8] text-black flex items-center justify-center font-bold">
+            3
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Weightless Float</h4>
+            <p class="text-gray-400 text-sm mt-1">
+              Experience zero gravity sensation in warm salt water, free from distractions.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4">
+          <div class="w-10 h-10 rounded-full bg-[#38BDF8] text-black flex items-center justify-center font-bold">
+            4
+          </div>
+          <div>
+            <h4 class="font-semibold text-white">Relax & Rejuvenate</h4>
+            <p class="text-gray-400 text-sm mt-1">
+              After your session, enjoy deep relaxation and mental clarity.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <a href="contact.html"
+         class="mt-10 inline-block bg-[#38BDF8] text-black px-8 py-3 rounded-xl font-semibold hover:bg-sky-400 transition">
+        Book Your First Float
+      </a>
+
+    </div>
+
+    <!-- RIGHT VISUAL CARD -->
+    <div class="relative">
+
+      <div class="bg-gradient-to-br from-[#38BDF8]/20 to-transparent p-10 rounded-3xl border border-white/10 backdrop-blur-xl">
+
+        <h3 class="text-xl font-semibold">Session Highlights</h3>
+
+        <ul class="mt-6 space-y-4 text-gray-300">
+
+          <li><i class="bi bi-alarm-fill"></i> 60–90 minutes of pure relaxation</li>
+         <li><i class="bi bi-water"></i> Zero gravity sensory experience</li>
+          <li><i class="bi bi-activity"></i> Stress & anxiety reduction</li>
+          <li><i class="bi bi-moon-stars"></i> Improved sleep quality</li>
+          <li><i class="bi bi-lightning-charge"></i> Enhanced mental clarity</li>
+
+        </ul>
+
+        <div class="mt-8 p-5 bg-black/40 rounded-2xl border border-white/10">
+          <p class="text-sm text-gray-300">
+            “Most users report deep relaxation within the first 20 minutes of floating.”
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION3 -->
+ <section class="py-24 bg-white overflow-hidden">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT CONTENT -->
+    <div>
+
+      <h2 class="text-3xl md:text-5xl font-bold text-black leading-tight">
+        Loved by Our <span class="text-[#38BDF8]">Clients</span>
+      </h2>
+
+      <p class="mt-6 text-gray-600 text-lg">
+        Discover how float therapy has transformed the lives of our customers.
+      </p>
+
+      <!-- Main Testimonial -->
+      <div class="mt-10 border-l-4 border-[#38BDF8] pl-6">
+
+        <p class="text-gray-700 text-lg leading-relaxed">
+          “Floating helped me disconnect from stress completely. After just one session,
+          I felt lighter, calmer, and more focused. It’s truly a life-changing experience.”
+        </p>
+
+        <div class="mt-6">
+          <h4 class="font-semibold text-black">Rahul Mehta</h4>
+          <p class="text-sm text-gray-500">Regular Client</p>
+        </div>
+
+      </div>
+
+      <!-- CTA -->
+      <a href="user.html"
+         class="mt-8 inline-block bg-[#38BDF8] text-black px-8 py-3 rounded-xl font-semibold hover:bg-sky-400 transition">
+        Try It Yourself
+      </a>
+
+    </div>
+
+    <!-- RIGHT VISUAL -->
+    <div class="relative hidden md:block">
+
+      <!-- Main Image -->
+      <img src="images/bg3.avif"
+           class="rounded-3xl shadow-xl w-full h-[400px] object-cover">
+
+      <!-- Blue Glow -->
+      <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-[#38BDF8]/20 blur-3xl rounded-full"></div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION4 -->
+ <section class="py-24 bg-white">
+
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- LEFT CONTENT -->
+    <div>
+
+      <h2 class="text-3xl md:text-5xl font-bold text-black leading-tight">
+        Health & <span class="text-[#38BDF8]">Safety</span>
+      </h2>
+
+      <p class="mt-6 text-gray-600 text-lg">
+        Your safety and comfort are our top priorities. Please review basic guidelines before your session.
+      </p>
+
+      <!-- Checklist -->
+      <ul class="mt-8 space-y-4 text-gray-600">
+
+        <li class="flex items-start gap-3">
+          <div class="w-6 h-6 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">✔</div>
+          <p>Avoid caffeine before your session</p>
+        </li>
+
+        <li class="flex items-start gap-3">
+          <div class="w-6 h-6 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">✔</div>
+          <p>Do not float with open wounds</p>
+        </li>
+
+        <li class="flex items-start gap-3">
+          <div class="w-6 h-6 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">✔</div>
+          <p>Consult a doctor if pregnant</p>
+        </li>
+
+        <li class="flex items-start gap-3">
+          <div class="w-6 h-6 flex items-center justify-center rounded-full bg-[#38BDF8]/10 text-[#38BDF8]">✔</div>
+          <p>Shower before and after session</p>
+        </li>
+
+      </ul>
+
+      <!-- Button -->
+      <a href="home2.html"
+         class="mt-8 inline-block bg-[#38BDF8] text-black px-8 py-3 rounded-xl font-semibold hover:bg-sky-400 transition">
+        View Full Waiver
+      </a>
+
+    </div>
+
+    <!-- RIGHT CARD -->
+    <div class="card border border-white/50 bg-[#f8fcff] p-8 rounded-3xl shadow-xl">
+
+      <h3 class="text-xl font-semibold text-black">
+        Quick Health Check
+      </h3>
+
+      <p class="mt-3 text-gray-600 text-sm">
+        Please confirm before booking:
+      </p>
+
+      <!-- Form Preview -->
+      <div class="mt-6 space-y-4">
+
+        <label class="flex items-center gap-3 text-gray-600 text-sm">
+          <input type="checkbox" class="accent-[#38BDF8]">
+          I am not under medical restriction
+        </label>
+
+        <label class="flex items-center gap-3 text-gray-600 text-sm">
+          <input type="checkbox" class="accent-[#38BDF8]">
+          I understand safety guidelines
+        </label>
+
+        <label class="flex items-center gap-3 text-gray-600 text-sm">
+          <input type="checkbox" class="accent-[#38BDF8]">
+          I agree to the terms & waiver
+        </label>
+
+      </div>
+
+      <!-- CTA -->
+      <button class="mt-6 w-full bg-black text-white py-3 rounded-xl font-semibold hover:bg-gray-900 transition border border-white/50">
+        Proceed to Booking
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- SECTION5 -->
+ <section class="relative py-28 overflow-hidden">
+
+  <!-- Background -->
+  <img src="images/bg1.jpg"
+       alt="Float Therapy"
+       class="absolute inset-0 w-full h-full object-cover z-0 opacity-40">
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/90"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+
+    <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+      Ready to Experience <span class="text-[#38BDF8]">Deep Zero Gravity Relaxation?</span>
+    </h2>
+
+    <p class="mt-6 text-gray-300 text-lg">
+      Step into silence, float effortlessly, and reset your mind & body in just one session.
+    </p>
+
+    <!-- Buttons -->
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+
+
+      <a href="packages.html"
+         class="btn1 border border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-black transition">
+        View Pricing
+      </a>
+
+    </div>
+
+    <!-- Small trust text -->
+    <p class="mt-8 text-sm text-gray-400">
+      ✔ Safe • ✔ Private Rooms • ✔ 5-Star Relaxation Experience
+    </p>
+
+  </div>
+
+</section>
+  <!-- FOOTER -->
+  <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+    lucide.createIcons();
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

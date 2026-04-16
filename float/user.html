@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User dashboard - Static Labs</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: '#38BDF8',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #38BDF850; border-radius: 10px; }
+  </style>
+  <script>
+    // Restore dark mode before page renders to avoid flash
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-slate-50 dark:bg-[#0a0f1a] transition-colors duration-300 font-sans">
+
+  <div class="flex h-screen overflow-hidden">
+    <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden"></div>
+
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-white dark:bg-[#111827] text-slate-800 dark:text-white flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 border-r border-slate-200 dark:border-slate-800">
+      <div class="p-6 flex justify-between items-center">
+       <h1 class="text-2xl text-slate-900 dark:text-white font-bold">
+      <a href="index.html">
+        STATIC <span class="text-[#38BDF8]">LABS</span>
+      </a>
+    </h1>
+        <button id="closeSidebar" class="lg:hidden text-2xl"><i class="bi bi-x"></i></button>
+      </div>
+
+      <nav class="flex-1 px-4 space-y-2 overflow-y-auto custom-scrollbar">
+        <p class="text-[10px] uppercase opacity-60 font-bold px-4 mb-2 tracking-widest mt-4">My Account</p>
+        <a id="nav-dashboard" onclick="showSection('dashboard')" class="nav-link flex items-center px-4 py-3 rounded-xl bg-brand/10 text-brand font-bold cursor-pointer transition">
+          <i class="bi bi-house-door-fill mr-3"></i> Overview
+        </a>
+        <a id="nav-bookings" onclick="showSection('bookings')" class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer">
+          <i class="bi bi-calendar3 mr-3"></i> My Sessions
+        </a>
+        <a id="nav-members" onclick="showSection('members')" class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer">
+          <i class="bi bi-star-fill mr-3"></i> Subscription
+        </a>
+        <a id="nav-waivers" onclick="showSection('waivers')" class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer">
+          <i class="bi bi-shield-check mr-3"></i> My Waivers
+        </a>
+        <a id="nav-resources" onclick="showSection('resources')" class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer">
+          <i class="bi bi-book-half mr-3"></i> Float Guide
+        </a>
+      </nav>
+      
+      <div class="lg:hidden p-4 border-t border-slate-200 dark:border-slate-700 space-y-3">
+        <div class="flex gap-2">
+          <button class="themeToggleBtn flex-1 flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 py-2 rounded-lg text-xs font-bold transition">
+            <i class="themeIcon bi bi-moon-stars-fill"></i> Theme
+          </button>
+          <button class="rtlToggleBtn flex-1 flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 py-2 rounded-lg text-xs font-bold transition">
+            <i class="bi bi-translate"></i> RTL
+          </button>
+        </div>
+      </div>
+
+      <div class="p-6 pt-2">
+        <a href="login.html" class="block">
+          <button class="w-full py-3 px-4 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-red-500 hover:text-white rounded-xl text-sm font-bold transition flex items-center justify-center gap-2">
+              <i class="bi bi-box-arrow-left"></i> Logout
+          </button>
+        </a>
+      </div>
+    </aside>
+
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <header class="bg-white dark:bg-[#111827] px-4 sm:px-6 py-4 flex justify-between items-center border-b dark:border-gray-800 shadow-sm z-10">
+        <div class="flex items-center gap-4">
+          <button id="openSidebar" class="lg:hidden text-2xl text-brand"><i class="bi bi-list"></i></button>
+          <h2 id="page-title" class="font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm hidden sm:block">Dashboard Overview</h2>
+        </div>
+        
+        <div class="flex items-center gap-4 sm:gap-6">
+          <span class="hidden md:flex text-xs text-green-500 font-bold items-center gap-1"><span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Active Member</span>
+          
+          <div class="flex items-center gap-2">
+            <button class="themeToggleBtn hidden lg:flex w-9 h-9 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-brand hover:text-white transition">
+              <i class="themeIcon bi bi-moon-stars-fill"></i>
+            </button>
+            <button class="rtlToggleBtn hidden lg:flex w-9 h-9 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-brand hover:text-white transition">
+              <i class="bi bi-translate"></i>
+            </button>
+          </div>
+
+          <div class="flex items-center gap-3 border-l border-slate-200 dark:border-slate-700 pl-4 sm:pl-6 cursor-pointer">
+            <div class="hidden sm:block text-right">
+              <p class="text-xs font-bold text-slate-800 dark:text-white">Bruce Wayne</p>
+              <p class="text-[10px] text-brand font-bold uppercase">VIP Voyager</p>
+            </div>
+            <img src="https://ui-avatars.com/api/?name=Bruce+Wayne&background=38BDF8&color=fff" class="w-10 h-10 rounded-full border-2 border-slate-200 dark:border-slate-700 hover:border-brand transition" alt="Profile">
+          </div>
+        </div>
+      </header>
+
+      <main class="p-6 overflow-y-auto custom-scrollbar h-full space-y-8">
+
+        <div id="section-dashboard" class="content-section space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 relative overflow-hidden">
+              <i class="bi bi-water absolute -right-4 -bottom-4 text-7xl text-brand opacity-10"></i>
+              <p class="text-xs font-bold text-slate-400 uppercase tracking-widest relative z-10">Total Floats</p>
+              <h3 class="text-3xl font-black text-brand mt-1 relative z-10">14</h3>
+              <p class="text-[10px] text-green-500 mt-2 relative z-10 font-bold">Zen Master tier approaching!</p>
+            </div>
+            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 relative overflow-hidden">
+              <i class="bi bi-calendar-event absolute -right-4 -bottom-4 text-7xl text-brand opacity-10"></i>
+              <p class="text-xs font-bold text-slate-400 uppercase tracking-widest relative z-10">Next Session</p>
+              <h3 class="text-3xl font-black text-brand mt-1 relative z-10">Apr 18</h3>
+              <p class="text-[10px] text-slate-400 mt-2 relative z-10 font-bold">09:00 AM in Pod 02</p>
+            </div>
+            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 relative overflow-hidden">
+              <i class="bi bi-ticket-perforated absolute -right-4 -bottom-4 text-7xl text-brand opacity-10"></i>
+              <p class="text-xs font-bold text-slate-400 uppercase tracking-widest relative z-10">Float Credits</p>
+              <h3 class="text-3xl font-black text-orange-400 mt-1 relative z-10">02</h3>
+              <p class="text-[10px] text-orange-400 mt-2 relative z-10 font-bold">Valid until May 30</p>
+            </div>
+            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 relative overflow-hidden">
+              <i class="bi bi-star absolute -right-4 -bottom-4 text-7xl text-brand opacity-10"></i>
+              <p class="text-xs font-bold text-slate-400 uppercase tracking-widest relative z-10">Current Tier</p>
+              <h3 class="text-2xl font-black text-slate-700 dark:text-white mt-1 relative z-10">Voyager</h3>
+              <p class="text-[10px] text-slate-400 mt-2 relative z-10 font-bold">2 floats / month</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+              <h4 class="font-bold dark:text-white mb-4">Upcoming Itinerary</h4>
+              <div class="space-y-4">
+                <div class="p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl border-l-4 border-brand">
+                  <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center gap-3">
+                      <i class="bi bi-water text-brand"></i>
+                      <div><p class="text-sm font-bold dark:text-white">90 Minute Float</p><p class="text-[10px] text-slate-400">Pod 02 (Deep Blue)</p></div>
+                    </div>
+                    <span class="text-[10px] font-black text-brand bg-brand/10 px-2 py-1 rounded">2 DAYS AWAY</span>
+                  </div>
+                  <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden"><div class="bg-brand h-full" style="width: 100%"></div></div>
+                </div>
+                <div class="p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl border-l-4 border-green-500">
+                  <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center gap-3">
+                      <i class="bi bi-check-circle-fill text-green-500"></i>
+                      <div><p class="text-sm font-bold dark:text-white">Safety Waiver</p><p class="text-[10px] text-slate-400">Status: Signed & Verified</p></div>
+                    </div>
+                    <span class="text-[10px] font-black text-green-500 bg-green-500/10 px-2 py-1 rounded">READY</span>
+                  </div>
+                </div>
+                <div class="p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl border-l-4 border-yellow-500">
+                  <div class="flex justify-between items-center mb-2">
+                    <div class="flex items-center gap-3">
+                      <i class="bi bi-music-note-list text-yellow-500"></i>
+                      <div><p class="text-sm font-bold dark:text-white">Audio Preference</p><p class="text-[10px] text-slate-400">Guided Theta Meditation</p></div>
+                    </div>
+                    <span class="text-[10px] font-black text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded">SELECTED</span>
+                  </div>
+                  <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden"><div class="bg-yellow-500 h-full" style="width: 100%"></div></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-brand p-8 rounded-3xl text-white relative overflow-hidden shadow-lg flex flex-col justify-between">
+               <i class="bi bi-stars absolute right-[-20px] bottom-[-20px] text-[180px] opacity-10"></i>
+               <div>
+                 <h4 class="font-black text-2xl tracking-tight">Refer a Friend</h4>
+                 <p class="text-sm mt-4 opacity-90 leading-relaxed font-medium">Share the gift of nothingness. Give your friends $20 off their first float session, and you'll earn a free 60-minute float credit when they complete their booking.</p>
+               </div>
+               <div class="mt-8 flex gap-4">
+                 <button class="px-6 py-3 bg-white text-brand rounded-xl font-bold text-sm hover:scale-105 shadow-md transition">Copy Invite Link</button>
+                 <button class="px-6 py-3 bg-white/20 border border-white/50 text-white rounded-xl font-bold text-sm hover:bg-white/30 transition">Learn More</button>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-bookings" class="content-section hidden space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-[#111827] p-5 rounded-2xl border dark:border-white/5 shadow-sm text-center">
+              <h4 class="text-xs font-bold text-slate-400 uppercase">Total Completed</h4>
+              <p class="text-3xl font-black text-brand mt-2">14</p>
+            </div>
+            <div class="bg-white dark:bg-[#111827] p-5 rounded-2xl border dark:border-white/5 shadow-sm text-center">
+              <h4 class="text-xs font-bold text-slate-400 uppercase">Upcoming</h4>
+              <p class="text-3xl font-black text-green-500 mt-2">01</p>
+            </div>
+            <div class="bg-white dark:bg-[#111827] p-5 rounded-2xl border dark:border-white/5 shadow-sm text-center">
+              <h4 class="text-xs font-bold text-slate-400 uppercase">Credits Remaining</h4>
+              <p class="text-3xl font-black text-slate-700 dark:text-slate-300 mt-2">02</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mt-4">
+            <div>
+              <h3 class="text-2xl font-black text-slate-800 dark:text-white">My Session History</h3>
+              <p class="text-xs text-slate-400">Manage your past and future appointments</p>
+            </div>
+            <div class="flex gap-2 w-full sm:w-auto">
+              <button class="px-4 py-2 bg-brand text-white rounded-xl font-bold text-xs whitespace-nowrap shadow-md hover:bg-sky-500 transition">+ Book New Float</button>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#111827] rounded-3xl shadow-sm border dark:border-white/5 overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm whitespace-nowrap">
+                <thead class="bg-slate-50 dark:bg-slate-900 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b dark:border-gray-800">
+                  <tr>
+                    <th class="p-5">Date & Time</th>
+                    <th class="p-5">Location</th>
+                    <th class="p-5">Service</th>
+                    <th class="p-5">Room/Pod</th>
+                    <th class="p-5">Payment</th>
+                    <th class="p-5">Status</th>
+                    <th class="p-5 text-right">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y dark:divide-gray-800">
+                  <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                    <td class="p-5 font-bold">Apr 18, 09:00 AM</td>
+                    <td class="p-5"><p class="font-bold">Downtown Center</p><p class="text-[10px] text-slate-400">Main Branch</p></td>
+                    <td class="p-5"><span class="px-3 py-1 bg-brand/10 text-brand text-[10px] font-bold rounded-full">90 MIN FLOAT</span></td>
+                    <td class="p-5 text-xs font-bold">Pod 02</td>
+                    <td class="p-5"><i class="bi bi-check-circle-fill text-green-500"></i> Prepaid Credit</td>
+                    <td class="p-5"><span class="bg-brand/10 text-brand px-3 py-1 rounded-full text-[10px] font-bold">UPCOMING</span></td>
+                    <td class="p-5 text-right"><button class="text-slate-400 hover:text-brand"><i class="bi bi-three-dots-vertical"></i></button></td>
+                  </tr>
+                  <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                    <td class="p-5 font-bold">Mar 22, 11:30 AM</td>
+                    <td class="p-5"><p class="font-bold">Downtown Center</p><p class="text-[10px] text-slate-400">Main Branch</p></td>
+                    <td class="p-5"><span class="px-3 py-1 bg-brand/10 text-brand text-[10px] font-bold rounded-full">90 MIN FLOAT</span></td>
+                    <td class="p-5 text-xs font-bold">Pod 01</td>
+                    <td class="p-5"><i class="bi bi-check-circle-fill text-green-500"></i> Membership</td>
+                    <td class="p-5"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-3 py-1 rounded-full text-[10px] font-bold">COMPLETED</span></td>
+                    <td class="p-5 text-right"><button class="text-slate-400 hover:text-brand"><i class="bi bi-three-dots-vertical"></i></button></td>
+                  </tr>
+                  <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                    <td class="p-5 font-bold">Mar 05, 01:00 PM</td>
+                    <td class="p-5"><p class="font-bold">Downtown Center</p><p class="text-[10px] text-slate-400">Main Branch</p></td>
+                    <td class="p-5"><span class="px-3 py-1 bg-purple-100 text-purple-600 text-[10px] font-bold rounded-full">60 MIN FLOAT</span></td>
+                    <td class="p-5 text-xs font-bold">Room 03</td>
+                    <td class="p-5"><i class="bi bi-check-circle-fill text-green-500"></i> Membership</td>
+                    <td class="p-5"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-3 py-1 rounded-full text-[10px] font-bold">COMPLETED</span></td>
+                    <td class="p-5 text-right"><button class="text-slate-400 hover:text-brand"><i class="bi bi-three-dots-vertical"></i></button></td>
+                  </tr>
+                  <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                    <td class="p-5 font-bold">Feb 14, 03:30 PM</td>
+                    <td class="p-5"><p class="font-bold">Downtown Center</p><p class="text-[10px] text-slate-400">Main Branch</p></td>
+                    <td class="p-5"><span class="px-3 py-1 bg-brand/10 text-brand text-[10px] font-bold rounded-full">60 MIN FLOAT</span></td>
+                    <td class="p-5 text-xs font-bold">Pod 02</td>
+                    <td class="p-5"><i class="bi bi-check-circle-fill text-green-500"></i> Card ending 4242</td>
+                    <td class="p-5"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-3 py-1 rounded-full text-[10px] font-bold">COMPLETED</span></td>
+                    <td class="p-5 text-right"><button class="text-slate-400 hover:text-brand"><i class="bi bi-three-dots-vertical"></i></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-members" class="content-section hidden space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+              <h4 class="text-xs font-black text-slate-400 uppercase mb-4">Float Frequency</h4>
+              <div class="flex items-end gap-2 h-32">
+                <div class="flex-1 bg-brand/20 rounded-t-lg h-[30%] hover:bg-brand transition cursor-pointer relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover:opacity-100 font-bold dark:text-white">Jan</span></div>
+                <div class="flex-1 bg-brand/30 rounded-t-lg h-[50%] hover:bg-brand transition cursor-pointer relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover:opacity-100 font-bold dark:text-white">Feb</span></div>
+                <div class="flex-1 bg-brand/50 rounded-t-lg h-[65%] hover:bg-brand transition cursor-pointer relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover:opacity-100 font-bold dark:text-white">Mar</span></div>
+                <div class="flex-1 bg-brand rounded-t-lg h-[90%] hover:bg-brand transition cursor-pointer relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover:opacity-100 font-bold dark:text-white">Apr</span></div>
+              </div>
+              <p class="text-sm font-bold dark:text-white mt-6">Consistent practice! <span class="text-[10px] text-green-500 font-bold bg-green-500/10 px-2 py-1 rounded ml-2">Keep going</span></p>
+            </div>
+            
+            <div class="md:col-span-2 bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+              <h4 class="text-xs font-black text-slate-400 uppercase mb-4">Your Membership Tiers</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="p-5 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 opacity-50 grayscale">
+                  <p class="text-[10px] font-black text-slate-500 uppercase">Starter (1/mo)</p>
+                  <p class="text-2xl font-black dark:text-white mt-2">$65</p>
+                  <p class="text-[10px] text-slate-500 mt-1 font-bold">Past Plan</p>
+                </div>
+                <div class="p-5 bg-brand/10 rounded-2xl border border-brand/20 relative">
+                  <span class="absolute -top-2 -right-2 bg-brand text-white text-[10px] font-bold px-2 py-1 rounded-full shadow-md">ACTIVE</span>
+                  <p class="text-[10px] font-black text-brand uppercase">Voyager (2/mo)</p>
+                  <p class="text-2xl font-black text-brand mt-2">$110</p>
+                  <p class="text-[10px] text-brand mt-1 font-bold">Renews May 1st</p>
+                </div>
+                <div class="p-5 bg-purple-50 dark:bg-purple-900/10 rounded-2xl border border-purple-100 dark:border-purple-900/30 hover:border-purple-300 transition cursor-pointer">
+                  <p class="text-[10px] font-black text-purple-600 uppercase">Zen Master (Unltd)</p>
+                  <p class="text-2xl font-black text-purple-600 dark:text-purple-400 mt-2">$199</p>
+                  <p class="text-[10px] text-purple-600 mt-1 font-bold">Click to Upgrade</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#111827] rounded-3xl p-6 shadow-sm border dark:border-white/5">
+             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+               <h4 class="font-bold dark:text-white">Billing History</h4>
+               <div class="flex gap-2 w-full sm:w-auto">
+                 <button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-slate-200 dark:hover:bg-slate-700">Update Payment Method</button>
+               </div>
+             </div>
+             
+             <div class="overflow-x-auto">
+               <table class="w-full text-left text-sm whitespace-nowrap">
+                 <thead class="text-[10px] font-black text-slate-400 uppercase border-b dark:border-gray-800">
+                   <tr>
+                     <th class="pb-3 px-2">Invoice Details</th>
+                     <th class="pb-3 px-2">Amount</th>
+                     <th class="pb-3 px-2">Date</th>
+                     <th class="pb-3 px-2">Method</th>
+                     <th class="pb-3 px-2 text-right">Status</th>
+                   </tr>
+                 </thead>
+                 <tbody class="divide-y dark:divide-gray-800">
+                   <tr class="dark:text-white">
+                     <td class="py-4 px-2">
+                       <div class="flex items-center gap-3">
+                         <div class="w-8 h-8 rounded-full bg-brand/10 text-brand flex items-center justify-center font-bold text-xs"><i class="bi bi-receipt"></i></div>
+                         <div><p class="font-bold text-sm">Voyager Membership</p><p class="text-[10px] text-slate-400">April Billing Cycle</p></div>
+                       </div>
+                     </td>
+                     <td class="py-4 px-2"><span class="text-xs font-bold text-slate-700 dark:text-slate-300">$110.00</span></td>
+                     <td class="py-4 px-2 text-xs">Apr 01, 2026</td>
+                     <td class="py-4 px-2 text-xs font-bold">•••• 4242</td>
+                     <td class="py-4 px-2 text-right"><span class="bg-green-100 text-green-600 px-2 py-1 rounded text-[10px] font-bold">PAID</span></td>
+                   </tr>
+                   <tr class="dark:text-white">
+                     <td class="py-4 px-2">
+                       <div class="flex items-center gap-3">
+                         <div class="w-8 h-8 rounded-full bg-brand/10 text-brand flex items-center justify-center font-bold text-xs"><i class="bi bi-receipt"></i></div>
+                         <div><p class="font-bold text-sm">Voyager Membership</p><p class="text-[10px] text-slate-400">March Billing Cycle</p></div>
+                       </div>
+                     </td>
+                     <td class="py-4 px-2"><span class="text-xs font-bold text-slate-700 dark:text-slate-300">$110.00</span></td>
+                     <td class="py-4 px-2 text-xs">Mar 01, 2026</td>
+                     <td class="py-4 px-2 text-xs font-bold">•••• 4242</td>
+                     <td class="py-4 px-2 text-right"><span class="bg-green-100 text-green-600 px-2 py-1 rounded text-[10px] font-bold">PAID</span></td>
+                   </tr>
+                   <tr class="dark:text-white">
+                     <td class="py-4 px-2">
+                       <div class="flex items-center gap-3">
+                         <div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 flex items-center justify-center font-bold text-xs"><i class="bi bi-cart"></i></div>
+                         <div><p class="font-bold text-sm">Post-Float Tea Blend</p><p class="text-[10px] text-slate-400">In-store purchase</p></div>
+                       </div>
+                     </td>
+                     <td class="py-4 px-2"><span class="text-xs font-bold text-slate-700 dark:text-slate-300">$18.50</span></td>
+                     <td class="py-4 px-2 text-xs">Feb 14, 2026</td>
+                     <td class="py-4 px-2 text-xs font-bold">•••• 4242</td>
+                     <td class="py-4 px-2 text-right"><span class="bg-green-100 text-green-600 px-2 py-1 rounded text-[10px] font-bold">PAID</span></td>
+                   </tr>
+                 </tbody>
+               </table>
+             </div>
+          </div>
+        </div>
+
+        <div id="section-waivers" class="content-section hidden space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="md:col-span-3 bg-green-50 dark:bg-green-900/10 border border-green-200 dark:border-green-900/30 p-6 rounded-3xl flex flex-col justify-center">
+              <div class="flex items-start gap-4">
+                <i class="bi bi-shield-check text-3xl text-green-500 mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-green-800 dark:text-green-300 text-lg">You're All Set!</h4>
+                  <p class="text-sm text-green-700 dark:text-green-400 mt-1">Your annual liability waiver is signed and up to date. You will not need to sign another waiver until January 2027, unless your medical history changes.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 text-center flex flex-col justify-center">
+               <h4 class="text-xs font-bold text-slate-400 uppercase">Waiver Status</h4>
+               <p class="text-2xl font-black text-brand mt-2">Verified</p>
+               <p class="text-[10px] text-slate-500 mt-1">Exp: Jan 2027</p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+            <h4 class="font-bold dark:text-white mb-6">Your Document History</h4>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-sm whitespace-nowrap">
+                <thead class="bg-slate-50 dark:bg-slate-900 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b dark:border-gray-800">
+                  <tr>
+                    <th class="p-4">Document ID</th>
+                    <th class="p-4">Document Type</th>
+                    <th class="p-4">Signature Date</th>
+                    <th class="p-4">Medical Declarations</th>
+                    <th class="p-4">Status</th>
+                    <th class="p-4 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y dark:divide-gray-800">
+                  <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                    <td class="p-4 font-mono text-xs">#WV-9021</td>
+                    <td class="p-4 font-bold">Annual Float Waiver</td>
+                    <td class="p-4 text-xs">Jan 12, 2026</td>
+                    <td class="p-4"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-2 py-1 rounded text-[10px] font-bold">NONE</span></td>
+                    <td class="p-4"><span class="text-green-500 font-bold text-xs"><i class="bi bi-check2-all"></i> ACTIVE</span></td>
+                    <td class="p-4 text-right"><button class="px-4 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">DOWNLOAD PDF</button></td>
+                  </tr>
+                  <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                    <td class="p-4 font-mono text-xs">#WV-1054</td>
+                    <td class="p-4 font-bold">Annual Float Waiver</td>
+                    <td class="p-4 text-xs">Jan 10, 2025</td>
+                    <td class="p-4"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-2 py-1 rounded text-[10px] font-bold">NONE</span></td>
+                    <td class="p-4"><span class="text-slate-400 font-bold text-xs"><i class="bi bi-archive"></i> EXPIRED</span></td>
+                    <td class="p-4 text-right"><button class="px-4 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">VIEW</button></td>
+                  </tr>
+                  <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                    <td class="p-4 font-mono text-xs">#WV-0012</td>
+                    <td class="p-4 font-bold">First-Time Orientation</td>
+                    <td class="p-4 text-xs">Mar 22, 2024</td>
+                    <td class="p-4"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-2 py-1 rounded text-[10px] font-bold">N/A</span></td>
+                    <td class="p-4"><span class="text-slate-400 font-bold text-xs"><i class="bi bi-archive"></i> COMPLETED</span></td>
+                    <td class="p-4 text-right"><button class="px-4 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">VIEW</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="section-resources" class="content-section hidden space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            <div class="space-y-6">
+              <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+                <div class="flex justify-between items-center mb-4">
+                  <h4 class="font-bold dark:text-white">My Audio Preferences</h4>
+                  <button class="text-brand text-xs font-bold hover:underline">Change Selection</button>
+                </div>
+                <div class="space-y-3">
+                  <div class="flex justify-between p-4 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl items-center transition hover:border-brand cursor-pointer">
+                      <div>
+                        <p class="text-sm font-bold dark:text-white">Total Silence (Sensory Deprivation)</p>
+                        <p class="text-[10px] text-slate-400 mt-1">No audio after initial 5-minute transition</p>
+                      </div>
+                      <button class="text-slate-400 hover:text-brand"><i class="bi bi-circle text-2xl"></i></button>
+                  </div>
+                  <div class="flex justify-between p-4 bg-brand/5 dark:bg-brand/10 border border-brand rounded-2xl items-center transition cursor-pointer">
+                      <div>
+                        <p class="text-sm font-bold dark:text-white">Guided Theta Meditation</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Gentle guidance for deep relaxation • Full session</p>
+                      </div>
+                      <span class="text-[10px] font-black text-brand bg-brand/10 px-2 py-1 rounded">CURRENT SELECTION</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+                <h4 class="font-bold dark:text-white mb-4">Pre-Float Checklist</h4>
+                <div class="space-y-2">
+                  <label class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                    <input type="checkbox" class="accent-brand w-4 h-4 rounded" checked>
+                    <span class="text-sm dark:text-slate-300 font-medium">Avoid caffeine at least 4 hours before your float</span>
+                  </label>
+                  <label class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                    <input type="checkbox" class="accent-brand w-4 h-4 rounded" checked>
+                    <span class="text-sm dark:text-slate-300 font-medium">Do not shave on the day of your float (salt stings!)</span>
+                  </label>
+                  <label class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
+                    <input type="checkbox" class="accent-brand w-4 h-4 rounded">
+                    <span class="text-sm dark:text-slate-300 font-medium">Eat a light meal 90 minutes prior (avoid heavy digestion)</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-6">
+              <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 h-full flex flex-col justify-between">
+                <div>
+                  <h4 class="font-bold dark:text-white mb-6">Float Center Guide</h4>
+                  
+                  <h5 class="text-xs font-black text-slate-400 uppercase mb-3">What We Provide</h5>
+                  <div class="space-y-3 mb-6">
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800">
+                      <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded bg-brand/10 text-brand flex items-center justify-center font-bold text-xs"><i class="bi bi-droplet-fill"></i></span>
+                        <div><p class="text-sm dark:text-white font-medium">Towels & Bathrobes</p><p class="text-[10px] text-slate-400">Freshly laundered for every guest</p></div>
+                      </div>
+                      <span class="text-sm font-bold text-green-500"><i class="bi bi-check2"></i></span>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800">
+                      <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded bg-brand/10 text-brand flex items-center justify-center font-bold text-xs"><i class="bi bi-earbuds"></i></span>
+                        <div><p class="text-sm dark:text-white font-medium">Silicone Earplugs</p><p class="text-[10px] text-slate-400">To keep the salt water out</p></div>
+                      </div>
+                      <span class="text-sm font-bold text-green-500"><i class="bi bi-check2"></i></span>
+                    </div>
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800">
+                      <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded bg-brand/10 text-brand flex items-center justify-center font-bold text-xs"><i class="bi bi-bandaid"></i></span>
+                        <div><p class="text-sm dark:text-white font-medium">Petroleum Jelly</p><p class="text-[10px] text-slate-400">To cover small cuts or scrapes</p></div>
+                      </div>
+                      <span class="text-sm font-bold text-green-500"><i class="bi bi-check2"></i></span>
+                    </div>
+                  </div>
+
+                  <h5 class="text-xs font-black text-slate-400 uppercase mb-3">Your Pod Environment</h5>
+                  <div class="space-y-4">
+                    <div>
+                      <div class="flex justify-between text-xs mb-1 dark:text-white font-medium"><span>Water Temperature</span><span>93.5°F (Skin Temp)</span></div>
+                      <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden"><div class="bg-brand h-full" style="width: 100%"></div></div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between text-xs mb-1 dark:text-white font-medium"><span>Epsom Salt Density</span><span>~1000 lbs per Pod</span></div>
+                      <div class="w-full bg-slate-100 dark:bg-slate-800 h-2 rounded-full overflow-hidden"><div class="bg-brand h-full" style="width: 100%"></div></div>
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="w-full mt-8 py-3 border border-slate-200 dark:border-slate-700 rounded-xl text-sm font-bold dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition">Read Full FAQ</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    function showSection(sectionId) {
+      document.querySelectorAll('.content-section').forEach(section => section.classList.add('hidden'));
+      document.getElementById('section-' + sectionId).classList.remove('hidden');
+
+      const titles = {
+        'dashboard': 'Dashboard Overview',
+        'bookings': 'My Session History',
+        'members': 'Subscription Management',
+        'waivers': 'My Legal Waivers',
+        'resources': 'Float Center Guide'
+      };
+      const titleEl = document.getElementById('page-title');
+      if(titleEl) titleEl.innerText = titles[sectionId];
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('bg-brand/10', 'text-brand', 'font-bold');
+        link.classList.add('text-slate-700', 'dark:text-slate-200');
+      });
+
+      const activeLink = document.getElementById('nav-' + sectionId);
+      if(activeLink) {
+          activeLink.classList.add('bg-brand/10', 'text-brand', 'font-bold');
+          activeLink.classList.remove('text-slate-700', 'dark:text-slate-200');
+      }
+
+      if (window.innerWidth < 1024) closeSidebar();
+    }
+
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+    const openBtn = document.getElementById("openSidebar");
+    const closeBtn = document.getElementById("closeSidebar");
+
+    function closeSidebar() {
+      sidebar.classList.add("-translate-x-full");
+      overlay.classList.add("hidden");
+    }
+
+    if(openBtn) openBtn.onclick = () => { sidebar.classList.remove("-translate-x-full"); overlay.classList.remove("hidden"); };
+    if(closeBtn) closeBtn.onclick = closeSidebar;
+    if(overlay) overlay.onclick = closeSidebar;
+
+    document.querySelectorAll(".themeToggleBtn").forEach(btn => {
+      btn.onclick = () => {
+        document.documentElement.classList.toggle("dark");
+        const isDark = document.documentElement.classList.contains("dark");
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        document.querySelectorAll(".themeIcon").forEach(i => i.className = isDark ? "bi bi-sun-fill" : "bi bi-moon-stars-fill");
+      };
+    });
+
+    const isDarkOnLoad = document.documentElement.classList.contains("dark");
+    document.querySelectorAll(".themeIcon").forEach(i => i.className = isDarkOnLoad ? "bi bi-sun-fill" : "bi bi-moon-stars-fill");
+
+    document.querySelectorAll(".rtlToggleBtn").forEach(btn => {
+      btn.onclick = () => {
+        const isRtl = document.documentElement.dir === "rtl";
+        document.documentElement.dir = isRtl ? "ltr" : "rtl";
+      };
+    });
+  </script>
+</body>
+
+</html>
