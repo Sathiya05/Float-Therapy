@@ -36,16 +36,16 @@
   </script>
 </head>
 
-<body class="bg-slate-50 dark:bg-[#0a0f1a] transition-colors duration-300 font-sans">
+<body class="bg-slate-50 dark:bg-black transition-colors duration-300 font-sans">
 
   <div class="flex h-screen overflow-hidden">
     <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40 lg:hidden"></div>
 
-    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-white dark:bg-[#111827] text-slate-800 dark:text-white flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 border-r border-slate-200 dark:border-slate-800">
+    <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 w-72 bg-white dark:bg-[#111111] text-slate-800 dark:text-white flex flex-col transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-50 border-r border-slate-200 dark:border-[#333333]">
       <div class="p-6 flex justify-between items-center">
-       <h1 class="text-2xl text-slate-900 dark:text-white font-bold">
+       <h1 class="text-2xl text-slate-900  font-bold">
       <a href="index.html">
-        STATIC <span class="text-[#38BDF8]">LABS</span>
+        STATIC <span class="text-[#38BDF8] font-bold">LABS</span>
       </a>
     </h1>
         <button id="closeSidebar" class="lg:hidden text-2xl"><i class="bi bi-x"></i></button>
@@ -54,19 +54,19 @@
       <nav class="flex-1 px-4 space-y-2 overflow-y-auto custom-scrollbar">
         <p class="text-[10px] uppercase opacity-60 font-bold px-4 mb-2 tracking-widest mt-4">My Account</p>
         <a id="nav-dashboard" onclick="showSection('dashboard')" class="nav-link flex items-center px-4 py-3 rounded-xl bg-brand/10 text-brand font-bold cursor-pointer transition">
-          <i class="bi bi-house-door-fill mr-3"></i> Overview
+          Overview
         </a>
         <a id="nav-bookings" onclick="showSection('bookings')" class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer">
-          <i class="bi bi-calendar3 mr-3"></i> My Sessions
+           My Sessions
         </a>
         <a id="nav-members" onclick="showSection('members')" class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer">
-          <i class="bi bi-star-fill mr-3"></i> Subscription
+          Subscription
         </a>
         <a id="nav-waivers" onclick="showSection('waivers')" class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer">
-          <i class="bi bi-shield-check mr-3"></i> My Waivers
+          My Waivers
         </a>
         <a id="nav-resources" onclick="showSection('resources')" class="nav-link flex items-center px-4 py-3 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition cursor-pointer">
-          <i class="bi bi-book-half mr-3"></i> Float Guide
+          Float Guide
         </a>
       </nav>
       
@@ -76,7 +76,7 @@
             <i class="themeIcon bi bi-moon-stars-fill"></i> Theme
           </button>
           <button class="rtlToggleBtn flex-1 flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 py-2 rounded-lg text-xs font-bold transition">
-            <i class="bi bi-translate"></i> RTL
+             <i class="bi bi-arrow-left-right"></i> RTL
           </button>
         </div>
       </div>
@@ -91,7 +91,7 @@
     </aside>
 
     <div class="flex-1 flex flex-col overflow-hidden">
-      <header class="bg-white dark:bg-[#111827] px-4 sm:px-6 py-4 flex justify-between items-center border-b dark:border-gray-800 shadow-sm z-10">
+      <header class="bg-white dark:bg-[#111111] px-4 sm:px-6 py-4 flex justify-between items-center border-b dark:border-[#333333] shadow-sm z-10">
         <div class="flex items-center gap-4">
           <button id="openSidebar" class="lg:hidden text-2xl text-brand"><i class="bi bi-list"></i></button>
           <h2 id="page-title" class="font-bold text-slate-800 dark:text-white uppercase tracking-widest text-sm hidden sm:block">Dashboard Overview</h2>
@@ -105,7 +105,7 @@
               <i class="themeIcon bi bi-moon-stars-fill"></i>
             </button>
             <button class="rtlToggleBtn hidden lg:flex w-9 h-9 items-center justify-center rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-brand hover:text-white transition">
-              <i class="bi bi-translate"></i>
+               <i class="bi bi-arrow-left-right"></i>
             </button>
           </div>
 
@@ -123,25 +123,25 @@
 
         <div id="section-dashboard" class="content-section space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 relative overflow-hidden">
+            <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10 relative overflow-hidden">
               <i class="bi bi-water absolute -right-4 -bottom-4 text-7xl text-brand opacity-10"></i>
               <p class="text-xs font-bold text-slate-400 uppercase tracking-widest relative z-10">Total Floats</p>
               <h3 class="text-3xl font-black text-brand mt-1 relative z-10">14</h3>
               <p class="text-[10px] text-green-500 mt-2 relative z-10 font-bold">Zen Master tier approaching!</p>
             </div>
-            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 relative overflow-hidden">
+            <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10 relative overflow-hidden">
               <i class="bi bi-calendar-event absolute -right-4 -bottom-4 text-7xl text-brand opacity-10"></i>
               <p class="text-xs font-bold text-slate-400 uppercase tracking-widest relative z-10">Next Session</p>
               <h3 class="text-3xl font-black text-brand mt-1 relative z-10">Apr 18</h3>
               <p class="text-[10px] text-slate-400 mt-2 relative z-10 font-bold">09:00 AM in Pod 02</p>
             </div>
-            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 relative overflow-hidden">
+            <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10 relative overflow-hidden">
               <i class="bi bi-ticket-perforated absolute -right-4 -bottom-4 text-7xl text-brand opacity-10"></i>
               <p class="text-xs font-bold text-slate-400 uppercase tracking-widest relative z-10">Float Credits</p>
               <h3 class="text-3xl font-black text-orange-400 mt-1 relative z-10">02</h3>
               <p class="text-[10px] text-orange-400 mt-2 relative z-10 font-bold">Valid until May 30</p>
             </div>
-            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 relative overflow-hidden">
+            <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10 relative overflow-hidden">
               <i class="bi bi-star absolute -right-4 -bottom-4 text-7xl text-brand opacity-10"></i>
               <p class="text-xs font-bold text-slate-400 uppercase tracking-widest relative z-10">Current Tier</p>
               <h3 class="text-2xl font-black text-slate-700 dark:text-white mt-1 relative z-10">Voyager</h3>
@@ -150,7 +150,7 @@
           </div>
           
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+            <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10">
               <h4 class="font-bold dark:text-white mb-4">Upcoming Itinerary</h4>
               <div class="space-y-4">
                 <div class="p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl border-l-4 border-brand">
@@ -201,15 +201,15 @@
 
         <div id="section-bookings" class="content-section hidden space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-[#111827] p-5 rounded-2xl border dark:border-white/5 shadow-sm text-center">
+            <div class="bg-white dark:bg-[#111111] p-5 rounded-2xl border dark:border-white/10 shadow-sm text-center">
               <h4 class="text-xs font-bold text-slate-400 uppercase">Total Completed</h4>
               <p class="text-3xl font-black text-brand mt-2">14</p>
             </div>
-            <div class="bg-white dark:bg-[#111827] p-5 rounded-2xl border dark:border-white/5 shadow-sm text-center">
+            <div class="bg-white dark:bg-[#111111] p-5 rounded-2xl border dark:border-white/10 shadow-sm text-center">
               <h4 class="text-xs font-bold text-slate-400 uppercase">Upcoming</h4>
               <p class="text-3xl font-black text-green-500 mt-2">01</p>
             </div>
-            <div class="bg-white dark:bg-[#111827] p-5 rounded-2xl border dark:border-white/5 shadow-sm text-center">
+            <div class="bg-white dark:bg-[#111111] p-5 rounded-2xl border dark:border-white/10 shadow-sm text-center">
               <h4 class="text-xs font-bold text-slate-400 uppercase">Credits Remaining</h4>
               <p class="text-3xl font-black text-slate-700 dark:text-slate-300 mt-2">02</p>
             </div>
@@ -221,14 +221,14 @@
               <p class="text-xs text-slate-400">Manage your past and future appointments</p>
             </div>
             <div class="flex gap-2 w-full sm:w-auto">
-              <button class="px-4 py-2 bg-brand text-white rounded-xl font-bold text-xs whitespace-nowrap shadow-md hover:bg-sky-500 transition">+ Book New Float</button>
+              <button class="px-4 py-3 bg-brand text-white rounded-xl font-bold text-xs whitespace-nowrap shadow-md hover:bg-sky-500 transition">+ Book New Float</button>
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#111827] rounded-3xl shadow-sm border dark:border-white/5 overflow-hidden">
+          <div class="bg-white dark:bg-[#111111] rounded-3xl shadow-sm border dark:border-white/10 overflow-hidden">
             <div class="overflow-x-auto">
               <table class="w-full text-left text-sm whitespace-nowrap">
-                <thead class="bg-slate-50 dark:bg-slate-900 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b dark:border-gray-800">
+                <thead class="bg-slate-50 dark:bg-slate-900 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b dark:border-[#333333]">
                   <tr>
                     <th class="p-5">Date & Time</th>
                     <th class="p-5">Location</th>
@@ -284,7 +284,7 @@
 
         <div id="section-members" class="content-section hidden space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+            <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10">
               <h4 class="text-xs font-black text-slate-400 uppercase mb-4">Float Frequency</h4>
               <div class="flex items-end gap-2 h-32">
                 <div class="flex-1 bg-brand/20 rounded-t-lg h-[30%] hover:bg-brand transition cursor-pointer relative group"><span class="absolute -top-6 left-1/2 -translate-x-1/2 text-[10px] opacity-0 group-hover:opacity-100 font-bold dark:text-white">Jan</span></div>
@@ -295,10 +295,10 @@
               <p class="text-sm font-bold dark:text-white mt-6">Consistent practice! <span class="text-[10px] text-green-500 font-bold bg-green-500/10 px-2 py-1 rounded ml-2">Keep going</span></p>
             </div>
             
-            <div class="md:col-span-2 bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+            <div class="md:col-span-2 bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10">
               <h4 class="text-xs font-black text-slate-400 uppercase mb-4">Your Membership Tiers</h4>
               <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="p-5 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 opacity-50 grayscale">
+                <div class="p-5 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-[#333333] opacity-50 grayscale">
                   <p class="text-[10px] font-black text-slate-500 uppercase">Starter (1/mo)</p>
                   <p class="text-2xl font-black dark:text-white mt-2">$65</p>
                   <p class="text-[10px] text-slate-500 mt-1 font-bold">Past Plan</p>
@@ -318,17 +318,17 @@
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#111827] rounded-3xl p-6 shadow-sm border dark:border-white/5">
+          <div class="bg-white dark:bg-[#111111] rounded-3xl p-6 shadow-sm border dark:border-white/10">
              <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
                <h4 class="font-bold dark:text-white">Billing History</h4>
                <div class="flex gap-2 w-full sm:w-auto">
-                 <button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-slate-200 dark:hover:bg-slate-700">Update Payment Method</button>
+                 <button class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-white px-4 py-3 rounded-xl text-xs font-bold hover:bg-slate-200 dark:hover:bg-slate-700">Update Payment Method</button>
                </div>
              </div>
              
              <div class="overflow-x-auto">
                <table class="w-full text-left text-sm whitespace-nowrap">
-                 <thead class="text-[10px] font-black text-slate-400 uppercase border-b dark:border-gray-800">
+                 <thead class="text-[10px] font-black text-slate-400 uppercase border-b dark:border-[#333333]">
                    <tr>
                      <th class="pb-3 px-2">Invoice Details</th>
                      <th class="pb-3 px-2">Amount</th>
@@ -391,18 +391,18 @@
                 </div>
               </div>
             </div>
-            <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 text-center flex flex-col justify-center">
+            <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10 text-center flex flex-col justify-center">
                <h4 class="text-xs font-bold text-slate-400 uppercase">Waiver Status</h4>
                <p class="text-2xl font-black text-brand mt-2">Verified</p>
                <p class="text-[10px] text-slate-500 mt-1">Exp: Jan 2027</p>
             </div>
           </div>
 
-          <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+          <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10">
             <h4 class="font-bold dark:text-white mb-6">Your Document History</h4>
             <div class="overflow-x-auto">
               <table class="w-full text-left text-sm whitespace-nowrap">
-                <thead class="bg-slate-50 dark:bg-slate-900 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b dark:border-gray-800">
+                <thead class="bg-slate-50 dark:bg-slate-900 text-[10px] font-black text-slate-400 uppercase tracking-widest border-b dark:border-[#333333]">
                   <tr>
                     <th class="p-4">Document ID</th>
                     <th class="p-4">Document Type</th>
@@ -419,7 +419,7 @@
                     <td class="p-4 text-xs">Jan 12, 2026</td>
                     <td class="p-4"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-2 py-1 rounded text-[10px] font-bold">NONE</span></td>
                     <td class="p-4"><span class="text-green-500 font-bold text-xs"><i class="bi bi-check2-all"></i> ACTIVE</span></td>
-                    <td class="p-4 text-right"><button class="px-4 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">DOWNLOAD PDF</button></td>
+                    <td class="p-4 text-right"><button class="px-4 py-2 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-xl text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">DOWNLOAD PDF</button></td>
                   </tr>
                   <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
                     <td class="p-4 font-mono text-xs">#WV-1054</td>
@@ -427,7 +427,7 @@
                     <td class="p-4 text-xs">Jan 10, 2025</td>
                     <td class="p-4"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-2 py-1 rounded text-[10px] font-bold">NONE</span></td>
                     <td class="p-4"><span class="text-slate-400 font-bold text-xs"><i class="bi bi-archive"></i> EXPIRED</span></td>
-                    <td class="p-4 text-right"><button class="px-4 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">VIEW</button></td>
+                    <td class="p-4 text-right"><button class="px-4 py-2 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-xl text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">VIEW</button></td>
                   </tr>
                   <tr class="dark:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
                     <td class="p-4 font-mono text-xs">#WV-0012</td>
@@ -435,7 +435,7 @@
                     <td class="p-4 text-xs">Mar 22, 2024</td>
                     <td class="p-4"><span class="bg-slate-100 dark:bg-slate-800 text-slate-500 px-2 py-1 rounded text-[10px] font-bold">N/A</span></td>
                     <td class="p-4"><span class="text-slate-400 font-bold text-xs"><i class="bi bi-archive"></i> COMPLETED</span></td>
-                    <td class="p-4 text-right"><button class="px-4 py-1.5 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-lg text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">VIEW</button></td>
+                    <td class="p-4 text-right"><button class="px-4 py-2 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 rounded-xl text-[10px] font-bold hover:bg-slate-100 dark:hover:bg-slate-800">VIEW</button></td>
                   </tr>
                 </tbody>
               </table>
@@ -447,13 +447,13 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             
             <div class="space-y-6">
-              <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+              <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10">
                 <div class="flex justify-between items-center mb-4">
                   <h4 class="font-bold dark:text-white">My Audio Preferences</h4>
                   <button class="text-brand text-xs font-bold hover:underline">Change Selection</button>
                 </div>
                 <div class="space-y-3">
-                  <div class="flex justify-between p-4 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl items-center transition hover:border-brand cursor-pointer">
+                  <div class="flex justify-between p-4 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-[#333333] rounded-2xl items-center transition hover:border-brand cursor-pointer">
                       <div>
                         <p class="text-sm font-bold dark:text-white">Total Silence (Sensory Deprivation)</p>
                         <p class="text-[10px] text-slate-400 mt-1">No audio after initial 5-minute transition</p>
@@ -470,7 +470,7 @@
                 </div>
               </div>
 
-              <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5">
+              <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10">
                 <h4 class="font-bold dark:text-white mb-4">Pre-Float Checklist</h4>
                 <div class="space-y-2">
                   <label class="flex items-center gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 transition border border-transparent hover:border-slate-200 dark:hover:border-slate-700">
@@ -490,27 +490,27 @@
             </div>
 
             <div class="space-y-6">
-              <div class="bg-white dark:bg-[#111827] p-6 rounded-3xl shadow-sm border dark:border-white/5 h-full flex flex-col justify-between">
+              <div class="bg-white dark:bg-[#111111] p-6 rounded-3xl shadow-sm border dark:border-white/10 h-full flex flex-col justify-between">
                 <div>
                   <h4 class="font-bold dark:text-white mb-6">Float Center Guide</h4>
                   
                   <h5 class="text-xs font-black text-slate-400 uppercase mb-3">What We Provide</h5>
                   <div class="space-y-3 mb-6">
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-[#333333]">
                       <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded bg-brand/10 text-brand flex items-center justify-center font-bold text-xs"><i class="bi bi-droplet-fill"></i></span>
                         <div><p class="text-sm dark:text-white font-medium">Towels & Bathrobes</p><p class="text-[10px] text-slate-400">Freshly laundered for every guest</p></div>
                       </div>
                       <span class="text-sm font-bold text-green-500"><i class="bi bi-check2"></i></span>
                     </div>
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-[#333333]">
                       <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded bg-brand/10 text-brand flex items-center justify-center font-bold text-xs"><i class="bi bi-earbuds"></i></span>
                         <div><p class="text-sm dark:text-white font-medium">Silicone Earplugs</p><p class="text-[10px] text-slate-400">To keep the salt water out</p></div>
                       </div>
                       <span class="text-sm font-bold text-green-500"><i class="bi bi-check2"></i></span>
                     </div>
-                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex justify-between items-center pb-3 border-b border-slate-100 dark:border-[#333333]">
                       <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded bg-brand/10 text-brand flex items-center justify-center font-bold text-xs"><i class="bi bi-bandaid"></i></span>
                         <div><p class="text-sm dark:text-white font-medium">Petroleum Jelly</p><p class="text-[10px] text-slate-400">To cover small cuts or scrapes</p></div>
