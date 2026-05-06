@@ -10,8 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
       <div>
-        <h1 class="text-2xl font-bold text-black">
-          <a href="index.html">STATIC<span class="text-[#38BDF8]">LABS</span></a>
+        <h1 class="text-2xl text-slate-900  font-bold">
+          <a href="index.html">
+            STATIC <span class="text-[#38BDF8] font-bold">LABS</span>
+          </a>
         </h1>
         <p class="text-gray-500 text-sm leading-relaxed mt-2">
           We specialize in sensory deprivation, neurological recovery, and 
