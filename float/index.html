@@ -43,7 +43,8 @@
 
     [data-theme="dark"] section,
     [data-theme="dark"] .card {
-      background-color: #000000 !important;
+      background-color: #111111 !important;
+      border-color: #333333 !important;
     }
 
     [data-theme="dark"] .btn,
@@ -402,37 +403,75 @@
 
 </section>
 <!-- SECTION5 -->
-<section class="bg-white py-20">
+<section class="bg-[#f8fcff] py-16 md:py-20">
 
-  <div class="max-w-3xl mx-auto px-6 text-center">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
 
     <!-- Heading -->
-    <h2 class="text-3xl md:text-4xl font-bold text-black">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-black">
       What Our <span class="text-[#38BDF8]">Clients Say</span>
     </h2>
 
-    <!-- Card -->
-    <div class="card mt-12 bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition">
+    <!-- Subheading -->
+    <p class="mt-3 text-gray-500 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">
+      Real experiences from people who discovered the power of float therapy — calmer minds, better sleep, and renewed energy.
+    </p>
 
-      <!-- Quote Icon -->
-      <div class="text-[#38BDF8] text-4xl mb-4">“</div>
+    <!-- Testimonial Grid: 1 col → 2 col tablet → 3 col desktop -->
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-      <!-- Text -->
-      <p class="text-gray-600 text-lg leading-relaxed">
-        Floating here completely changed how I relax. My stress levels dropped,
-        my sleep improved, and I felt mentally refreshed after just one session.
-        Truly a peaceful and premium experience.
-      </p>
+      <!-- Testimonial 1 -->
+      <div class="card bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-xl transition flex flex-col text-left">
+        <div class="flex gap-1 text-[#38BDF8] mb-4">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        </div>
+        <p class="text-gray-600 text-sm sm:text-base leading-relaxed flex-1">
+          "Floating here completely changed how I relax. My stress levels dropped, my sleep improved, and I felt mentally refreshed after just one session. Truly a peaceful and premium experience."
+        </p>
+        <div class="mt-6 flex items-center gap-4">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg"
+               class="w-12 h-12 rounded-full object-cover border-2 border-[#38BDF8] flex-shrink-0">
+          <div>
+            <h4 class="text-black text-sm font-medium">Ananya R</h4>
+            <p class="text-gray-400 text-xs">Regular Client</p>
+          </div>
+        </div>
+      </div>
 
-      <!-- User -->
-      <div class="mt-8 flex flex-col items-center">
+      <!-- Testimonial 2 -->
+      <div class="card bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-xl transition flex flex-col text-left">
+        <div class="flex gap-1 text-[#38BDF8] mb-4">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        </div>
+         <p class="text-gray-600 text-sm sm:text-base leading-relaxed flex-1">
+          "Floating here completely changed how I relax. My stress levels dropped, my sleep improved, and I felt mentally refreshed after just one session. Truly a peaceful and premium experience."
+        </p>
+        <div class="mt-6 flex items-center gap-4">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg"
+               class="w-12 h-12 rounded-full object-cover border-2 border-[#38BDF8] flex-shrink-0">
+          <div>
+            <h4 class="text-black text-sm font-medium">James M</h4>
+            <p class="text-gray-400 text-xs">Professional Athlete</p>
+          </div>
+        </div>
+      </div>
 
-        <img src="https://randomuser.me/api/portraits/women/44.jpg"
-             class="w-16 h-16 rounded-full object-cover border-2 border-[#38BDF8]">
-
-        <h4 class="mt-4 text-black font-semibold text-lg">Ananya R</h4>
-        <p class="text-gray-500 text-sm">Regular Client</p>
-
+      <!-- Testimonial 3 -->
+      <div class="card bg-white border border-gray-100 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-xl transition flex flex-col text-left sm:col-span-2 lg:col-span-1">
+        <div class="flex gap-1 text-[#38BDF8] mb-4">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+        </div>
+          <p class="text-gray-600 text-sm sm:text-base leading-relaxed flex-1">
+          "Floating here completely changed how I relax. My stress levels dropped, my sleep improved, and I felt mentally refreshed after just one session. Truly a peaceful and premium experience."
+        </p>
+        <div class="mt-6 flex items-center gap-4">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg"
+               class="w-12 h-12 rounded-full object-cover border-2 border-[#38BDF8] flex-shrink-0">
+          <div>
+            <h4 class="text-black text-sm font-medium">Priya S</h4>
+            <p class="text-gray-400 text-xs">Wellness Enthusiast</p>
+          </div>
+        </div>
       </div>
 
     </div>
