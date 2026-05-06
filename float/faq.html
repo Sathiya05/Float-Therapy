@@ -43,7 +43,8 @@
 
     [data-theme="dark"] section,
     [data-theme="dark"] .card {
-      background-color: #000000 !important;
+      background-color: #111111 !important;
+      border-color: #333333 !important;
     }
 
     [data-theme="dark"] .btn,
@@ -75,244 +76,273 @@
   <!-- navbar -->
   <div id="navbar"></div>
   <!-- HERO BANNER -->
-<section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <img src="images/bg7.avif" alt="Float Therapy FAQ" class="absolute inset-0 w-full h-full object-cover z-0 scale-105">
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/85"></div>
+    <!-- Soft Glow -->
+    <div class="absolute top-20 left-10 w-52 h-52 bg-[#38BDF8]/20 blur-3xl rounded-full"></div>
+    <div class="absolute bottom-20 right-10 w-60 h-60 bg-[#38BDF8]/10 blur-3xl rounded-full"></div>
 
-  <!-- Background Image -->
-  <img src="images/bg7.avif"
-       alt="Float Therapy FAQ"
-       class="absolute inset-0 w-full h-full object-cover z-0 scale-105">
-
-  <!-- Dark Overlay -->
-  <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/85"></div>
-
-  <!-- Soft Glow -->
-  <div class="absolute top-20 left-10 w-52 h-52 bg-[#38BDF8]/20 blur-3xl rounded-full"></div>
-  <div class="absolute bottom-20 right-10 w-60 h-60 bg-[#38BDF8]/10 blur-3xl rounded-full"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-
-    <h1 class="text-4xl md:text-6xl font-bold">
-      Frequently Asked <span class="text-[#38BDF8]">Questions</span>
-    </h1>
-
-    <p class="mt-6 text-gray-300 text-lg md:text-xl">
-      Everything you need to know about float therapy, sessions, safety, and benefits.
-    </p>
-
-    <!-- Buttons -->
-    <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-
-      <a href="faq.html"
-         class="bg-[#38BDF8] text-black px-8 py-4 rounded-xl font-semibold hover:bg-sky-400 transition">
-        View Answers
-      </a>
-    </div>
-
-  </div>
-
-</section>
-<!-- ṢECTION1 -->
- <section class="py-24 bg-white">
-
-  <div class="max-w-4xl mx-auto px-6">
-
-    <!-- Heading -->
-    <div class="text-center">
-      <h2 class="text-3xl md:text-5xl font-bold text-black">
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+      <h1 class="text-3xl md:text-6xl font-bold whitespace-nowrap">
         Frequently Asked <span class="text-[#38BDF8]">Questions</span>
-      </h2>
-
-      <p class="mt-5 text-gray-600 text-lg">
-        Everything you need to know before your float therapy session.
+      </h1>
+      <p class="mt-6 text-gray-300 text-lg md:text-xl">
+        Everything you need to know about float therapy, sessions, safety, and benefits.
       </p>
     </div>
+  </section>
 
-    <!-- Accordion -->
-    <div class="mt-16 space-y-4">
-
-      <!-- 1 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          What is float therapy?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          Float therapy is a relaxation technique where you float in warm saltwater to eliminate external stimulation and achieve deep mental and physical relaxation.
-        </p>
-      </details>
-
-      <!-- 2 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          Is float therapy safe?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          Yes, it is completely safe. The water contains Epsom salt and is hygienically filtered after every session.
-        </p>
-      </details>
-
-      <!-- 3 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          How long is a float session?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          Sessions typically last between 60 to 90 minutes depending on your selected package.
-        </p>
-      </details>
-
-      <!-- 4 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          Do I need experience to try float therapy?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          No experience is required. First-time users are guided before the session for comfort and ease.
-        </p>
-      </details>
-
-      <!-- 5 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          What should I bring?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          Nothing is required. Towels, earplugs, shampoo, and essentials are provided at the center.
-        </p>
-      </details>
-
-      <!-- 6 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          Can I float if I have injuries or pain?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          Yes, float therapy helps reduce muscle tension and joint pain, but consult your doctor for serious conditions.
-        </p>
-      </details>
-
-      <!-- 7 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          Will I feel claustrophobic inside the tank?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          No. You control light and sound. Many users feel calm and relaxed within minutes.
-        </p>
-      </details>
-
-      <!-- 8 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          How often should I do float therapy?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          Once a week or twice a month is ideal for stress relief and mental wellness.
-        </p>
-      </details>
-
-      <!-- 9 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          Can I fall asleep inside the tank?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          Yes, many people fall into deep relaxation or light sleep safely during the session.
-        </p>
-      </details>
-
-      <!-- 10 -->
-      <details class="group border rounded-2xl p-5 shadow-sm">
-        <summary class="flex justify-between items-center cursor-pointer font-semibold">
-          What are the main benefits of float therapy?
-          <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
-        </summary>
-        <p class="mt-4 text-gray-600 text-sm">
-          It reduces stress, improves sleep, enhances creativity, relieves pain, and promotes deep mental clarity.
-        </p>
-      </details>
-
-    </div>
-
-  </div>
-
-</section>
-<!-- SECTION2 -->
- <section class="py-24 bg-[#0B0F19] text-white">
-
-  <div class="max-w-5xl mx-auto px-6 text-center">
-
-    <!-- Heading -->
-    <h2 class="text-3xl md:text-5xl font-bold">
-      Still Have <span class="text-[#38BDF8]">Questions?</span>
-    </h2>
-
-    <p class="mt-6 text-gray-300 text-lg max-w-2xl mx-auto">
-      Our team is here to help you understand float therapy and choose the right experience for you.
-    </p>
-
-    <!-- Support Options -->
-    <div class="mt-12 grid md:grid-cols-3 gap-6 text-left">
-
-      <!-- Call -->
-      <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
-        <h3 class="font-semibold text-[#38BDF8]">Call Us</h3>
-        <p class="mt-2 text-gray-300 text-sm">
-          Speak directly with our support team for instant answers.
-        </p>
-        <p class="mt-4 text-white font-semibold">+91 98765 43210</p>
+  <!-- FAQ SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <!-- Category Tabs -->
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <button onclick="filterFAQ('all')" class="faq-tab active px-6 py-3 rounded-xl border border-[#38BDF8] bg-[#38BDF8] text-black font-medium transition">All</button>
+        <button onclick="filterFAQ('general')" class="faq-tab px-6 py-3 rounded-xl border border-gray-200 text-gray-600 hover:border-[#38BDF8] hover:text-[#38BDF8] transition">General</button>
+        <button onclick="filterFAQ('sessions')" class="faq-tab px-6 py-3 rounded-xl border border-gray-200 text-gray-600 hover:border-[#38BDF8] hover:text-[#38BDF8] transition">Sessions</button>
+        <button onclick="filterFAQ('benefits')" class="faq-tab px-6 py-3 rounded-xl border border-gray-200 text-gray-600 hover:border-[#38BDF8] hover:text-[#38BDF8] transition">Benefits</button>
       </div>
 
-      <!-- Email -->
-      <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
-        <h3 class="font-semibold text-[#38BDF8]">Email Support</h3>
-        <p class="mt-2 text-gray-300 text-sm">
-          Get detailed responses for your questions anytime.
-        </p>
-        <p class="mt-4 text-white font-semibold">staticlabs@gmail.com</p>
+      <!-- Accordion Container -->
+      <div id="faqContainer" class="space-y-4">
+        <!-- 1 General -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm" data-category="general">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            What is float therapy?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            Float therapy is a relaxation technique where you float in warm saltwater to eliminate external stimulation and achieve deep mental and physical relaxation.
+          </p>
+        </details>
+
+        <!-- 2 General -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm" data-category="general">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            Is float therapy safe?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            Yes, it is completely safe. The water contains Epsom salt and is hygienically filtered after every session.
+          </p>
+        </details>
+
+        <!-- 3 Sessions -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm" data-category="sessions">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            How long is a float session?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            Sessions typically last between 60 to 90 minutes depending on your selected package.
+          </p>
+        </details>
+
+        <!-- 4 General -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm" data-category="general">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            Do I need experience to try float therapy?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            No experience is required. First-time users are guided before the session for comfort and ease.
+          </p>
+        </details>
+
+        <!-- 5 Sessions -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm" data-category="sessions">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            What should I bring?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            Nothing is required. Towels, earplugs, shampoo, and essentials are provided at the center.
+          </p>
+        </details>
+
+        <!-- 6 Benefits -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm hidden-faq" data-category="benefits">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            Can I float if I have injuries or pain?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            Yes, float therapy helps reduce muscle tension and joint pain, but consult your doctor for serious conditions.
+          </p>
+        </details>
+
+        <!-- 7 General -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm hidden-faq" data-category="general">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            Will I feel claustrophobic inside the tank?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            No. You control light and sound. Many users feel calm and relaxed within minutes.
+          </p>
+        </details>
+
+        <!-- 8 Sessions -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm hidden-faq" data-category="sessions">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            How often should I do float therapy?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            Once a week or twice a month is ideal for stress relief and mental wellness.
+          </p>
+        </details>
+
+        <!-- 9 General -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm hidden-faq" data-category="general">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            Can I fall asleep inside the tank?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            Yes, many people fall into deep relaxation or light sleep safely during the session.
+          </p>
+        </details>
+
+        <!-- 10 Benefits -->
+        <details class="faq-item group border rounded-2xl p-5 shadow-sm hidden-faq" data-category="benefits">
+          <summary class="flex justify-between items-center cursor-pointer font-semibold">
+            What are the main benefits of float therapy?
+            <span class="text-[#38BDF8] group-open:rotate-45 transition text-2xl">+</span>
+          </summary>
+          <p class="mt-4 text-gray-600 text-sm">
+            It reduces stress, improves sleep, enhances creativity, relieves pain, and promotes deep mental clarity.
+          </p>
+        </details>
       </div>
 
-      <!-- Visit -->
-      <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
-        <h3 class="font-semibold text-[#38BDF8]">Visit Us</h3>
-        <p class="mt-2 text-gray-300 text-sm">
-          Experience our float center in person before booking.
-        </p>
-        <p class="mt-4 text-white font-semibold">Open 9AM – 9PM</p>
+      <!-- View All Link -->
+      <div id="viewAllWrapper" class="mt-10 text-center">
+        <button id="viewAllBtn" onclick="toggleAllFAQ()" class="text-[#38BDF8] font-semibold hover:underline flex items-center justify-center gap-2 mx-auto">
+          View All Questions <i class="bi bi-chevron-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STILL HAVE QUESTIONS -->
+  <section class="py-24 bg-[#0B0F19] text-white">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold">
+        Still Have <span class="text-[#38BDF8]">Questions?</span>
+      </h2>
+      <p class="mt-6 text-gray-300 text-lg max-w-2xl mx-auto">
+        Our team is here to help you understand float therapy and choose the right experience for you.
+      </p>
+
+      <div class="mt-12 grid md:grid-cols-3 gap-6 text-left">
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <h3 class="font-semibold text-[#38BDF8]">Call Us</h3>
+          <p class="mt-2 text-gray-300 text-sm">Speak directly with our support team for instant answers.</p>
+          <p class="mt-4 text-white font-semibold">+91 98765 43210</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <h3 class="font-semibold text-[#38BDF8]">Email Support</h3>
+          <p class="mt-2 text-gray-300 text-sm">Get detailed responses for your questions anytime.</p>
+          <p class="mt-4 text-white font-semibold">staticlabs@gmail.com</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <h3 class="font-semibold text-[#38BDF8]">Visit Us</h3>
+          <p class="mt-2 text-gray-300 text-sm">Experience our float center in person before booking.</p>
+          <p class="mt-4 text-white font-semibold">Open 9AM – 9PM</p>
+        </div>
       </div>
 
+      <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="bg-[#38BDF8] text-black px-8 py-4 rounded-xl font-semibold hover:bg-sky-400 transition">Book a Session</a>
+        <a href="faq.html" class="btn1 border border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-black transition">Back to FAQs</a>
+      </div>
     </div>
+  </section>
 
-    <!-- CTA Buttons -->
-    <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-
-      <a href="contact.html"
-         class="bg-[#38BDF8] text-black px-8 py-4 rounded-xl font-semibold hover:bg-sky-400 transition">
-        Book a Session
-      </a>
-
-      <a href="faq.html"
-         class="btn1 border border-white/30 px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-black transition">
-        Back to FAQs
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-    <!-- FOOTER -->
+  <!-- FOOTER -->
   <div id="footer"></div>
+
+  <style>
+    .hidden-faq { display: none; }
+    .faq-tab.active {
+      background-color: #38BDF8;
+      color: black;
+      border-color: #38BDF8;
+    }
+  </style>
+
   <script>
+    let showAll = false;
+    let currentCategory = 'all';
+
+    function filterFAQ(category) {
+      currentCategory = category;
+      showAll = false; // Reset view all state when switching tabs
+      
+      // Update tabs UI
+      document.querySelectorAll('.faq-tab').forEach(tab => {
+        tab.classList.remove('active', 'bg-[#38BDF8]', 'text-black');
+        tab.classList.add('text-gray-600', 'border-gray-200');
+        if (tab.innerText.toLowerCase() === category) {
+          tab.classList.add('active', 'bg-[#38BDF8]', 'text-black');
+          tab.classList.remove('text-gray-600', 'border-gray-200');
+        }
+      });
+
+      refreshFAQDisplay();
+    }
+
+    function toggleAllFAQ() {
+      showAll = !showAll;
+      refreshFAQDisplay();
+    }
+
+    function refreshFAQDisplay() {
+      const items = document.querySelectorAll('.faq-item');
+      let visibleCount = 0;
+      let totalInCategory = 0;
+
+      items.forEach(item => {
+        const matchesCategory = currentCategory === 'all' || item.dataset.category === currentCategory;
+        
+        if (matchesCategory) {
+          totalInCategory++;
+          if (showAll || visibleCount < 5) {
+            item.style.display = 'block';
+            visibleCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      // Show/Hide "View All" button based on logic
+      const btn = document.getElementById('viewAllBtn');
+      const wrapper = document.getElementById('viewAllWrapper');
+      
+      if (totalInCategory > 5) {
+        wrapper.style.display = 'block';
+        btn.innerHTML = showAll 
+          ? 'Show Less <i class="bi bi-chevron-up"></i>' 
+          : `View All Questions (${totalInCategory}) <i class="bi bi-chevron-down"></i>`;
+      } else {
+        wrapper.style.display = 'none';
+      }
+    }
+
+    // Initial run
+    document.addEventListener('DOMContentLoaded', () => {
+      refreshFAQDisplay();
+    });
+
     tailwind.config = {
       theme: {
         extend: {
@@ -327,5 +357,4 @@
   <script src="navbar.js"></script>
   <script src="footer.js"></script>
 </body>
-
 </html>
