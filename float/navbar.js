@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <!-- Logo (left) -->
     <div class="flex items-center">
-      <h1 class="text-2xl text-slate-900  font-bold">
+      <h1 class="text-2xl text-slate-900 dark:text-white font-bold">
           <a href="index.html">
             STATIC <span class="text-[#38BDF8] font-bold">LABS</span>
           </a>
